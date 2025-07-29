@@ -1,0 +1,112 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentResults.Extensions.AspNetCore" Version="0.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.4" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.6.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RealEstate.Application\RealEstate.Application.csproj" />
+    <ProjectReference Include="..\RealEstate.Infrastructure\RealEstate.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Uploads\DefaultPicture\default-user-profile-picture.png" />
+    <None Include="wwwroot\Uploads\Images\056a4c46-00b1-4f31-a23c-f39b1f581da6.png" />
+    <None Include="wwwroot\Uploads\Images\09f4e520-d9b6-4bd5-a5d0-ac11b7500769.png" />
+    <None Include="wwwroot\Uploads\Images\0b8e8643-4e3d-4284-9a95-0f407f3c443d.png" />
+    <None Include="wwwroot\Uploads\Images\0d2315e8-df85-4177-976e-0be0a5d43f10.png" />
+    <None Include="wwwroot\Uploads\Images\18a69561-b664-493c-af47-32926ce094dd.png" />
+    <None Include="wwwroot\Uploads\Images\2813221d-631f-410c-be4a-6405cafd4944.png" />
+    <None Include="wwwroot\Uploads\Images\2a920410-e819-4424-85ba-0d81c791798a.png" />
+    <None Include="wwwroot\Uploads\Images\2c35c660-d386-446d-ae68-c6cbb8ba8e4c.png" />
+    <None Include="wwwroot\Uploads\Images\2d31154e-823e-4461-bc4b-36f4d733abbc.png" />
+    <None Include="wwwroot\Uploads\Images\2f2ee302-831d-4fa6-b453-fcfe3b23b9f8.png" />
+    <None Include="wwwroot\Uploads\Images\3100f8f5-6751-4627-8f84-86f09915e189.png" />
+    <None Include="wwwroot\Uploads\Images\31e926d2-4ab7-4efd-bf67-b89bbfc463e3.png" />
+    <None Include="wwwroot\Uploads\Images\36060d58-bad9-41c7-aead-1be24be7ac4d.png" />
+    <None Include="wwwroot\Uploads\Images\3a88f9a0-65fe-4d3d-a74d-11b96d7bfa07.png" />
+    <None Include="wwwroot\Uploads\Images\49b7ef90-5834-46cb-a1fb-8c13aa6a0677.png" />
+    <None Include="wwwroot\Uploads\Images\55868f40-7e99-42f5-bc00-09ceafe209ae.png" />
+    <None Include="wwwroot\Uploads\Images\5886c786-5bac-4f37-9ced-3685054c4584.png" />
+    <None Include="wwwroot\Uploads\Images\5a12b24c-3898-4537-8042-8c6161e56bb4.png" />
+    <None Include="wwwroot\Uploads\Images\5a7a0dd0-7780-4627-91f1-491f3587e639.png" />
+    <None Include="wwwroot\Uploads\Images\5b6fa385-f15a-40df-8618-320c922ead3f.jpg" />
+    <None Include="wwwroot\Uploads\Images\5b816110-4e6a-4c5d-9003-93316a72c7de.png" />
+    <None Include="wwwroot\Uploads\Images\5e9d3dbe-f34a-4515-b5ac-3961e7daa012.png" />
+    <None Include="wwwroot\Uploads\Images\5fe1226a-0b05-467e-b22f-ff04afc74ad3.png" />
+    <None Include="wwwroot\Uploads\Images\61bfe5cf-e16e-40a8-bba6-0a8ddcecb971.png" />
+    <None Include="wwwroot\Uploads\Images\672076a5-94ad-4e7f-ab40-3eeb9c8c472e.png" />
+    <None Include="wwwroot\Uploads\Images\6755d224-5b72-43c6-9d65-85915da4ebdb.png" />
+    <None Include="wwwroot\Uploads\Images\69648952-638b-4ecb-9a75-d6b52bc185ba.png" />
+    <None Include="wwwroot\Uploads\Images\6c20af4d-6039-4538-be69-2deebc81f6ef.png" />
+    <None Include="wwwroot\Uploads\Images\6db6d651-a347-4a28-97ff-4e71d2937ac3.png" />
+    <None Include="wwwroot\Uploads\Images\7691b01a-249f-44aa-ac16-71a0c180eb46.png" />
+    <None Include="wwwroot\Uploads\Images\79cca82a-7344-4cd4-9f9a-d5479dd603c8.png" />
+    <None Include="wwwroot\Uploads\Images\7b9acc49-ed47-48e2-94a1-f3f0126a1937.png" />
+    <None Include="wwwroot\Uploads\Images\7d71134c-4f96-4c9f-959b-6b9193f002de.png" />
+    <None Include="wwwroot\Uploads\Images\7df5a62e-c29e-4f3a-8c41-336d3290b8db.png" />
+    <None Include="wwwroot\Uploads\Images\822c60f5-4438-45fb-b53c-98c8d1f92244.png" />
+    <None Include="wwwroot\Uploads\Images\867e175b-b475-4374-9784-4ec1b7b0ad54.png" />
+    <None Include="wwwroot\Uploads\Images\8d87de7e-64f2-4019-9895-2c503bbbc8d6.png" />
+    <None Include="wwwroot\Uploads\Images\8de3f326-991c-4d27-8bd0-bfc6502b07cb.png" />
+    <None Include="wwwroot\Uploads\Images\902cf690-28c0-412c-a224-345fe20ee72d.png" />
+    <None Include="wwwroot\Uploads\Images\914f3c32-4268-4434-a757-9089a0e22588.png" />
+    <None Include="wwwroot\Uploads\Images\9417585a-2083-4f23-83f3-9baf63c826a2.png" />
+    <None Include="wwwroot\Uploads\Images\945b0111-6ca2-494a-932f-a3daf4c44b49.png" />
+    <None Include="wwwroot\Uploads\Images\97876cf5-d64a-4838-87f3-5f339a8359b0.jpg" />
+    <None Include="wwwroot\Uploads\Images\97d5c4ee-02d0-49d7-a73a-344fd4e612e6.png" />
+    <None Include="wwwroot\Uploads\Images\9895acbb-c7d4-4aa4-b7f1-c740fe57172e.png" />
+    <None Include="wwwroot\Uploads\Images\9acb9913-a09a-48d1-a5f3-8f4997dc608a.png" />
+    <None Include="wwwroot\Uploads\Images\9b822361-6b50-4bf7-ba4f-1de9e8409dfb.png" />
+    <None Include="wwwroot\Uploads\Images\a4759ac2-dac6-4f54-8452-d07aba716dc4.png" />
+    <None Include="wwwroot\Uploads\Images\a6e63f19-11ec-4037-9d0c-ce6f1f9568bb.png" />
+    <None Include="wwwroot\Uploads\Images\acc79064-21fd-47ff-bf66-97450f7dd92b.jpg" />
+    <None Include="wwwroot\Uploads\Images\ae99d494-af4a-45fb-8287-66e7102f2beb.png" />
+    <None Include="wwwroot\Uploads\Images\b86fbdad-048b-4833-a29c-71f4d4f80dda.png" />
+    <None Include="wwwroot\Uploads\Images\ba53642c-2014-42d4-8e4b-92f026388f08.png" />
+    <None Include="wwwroot\Uploads\Images\ba99d372-3161-4dac-83e5-9e1238a7f81c.png" />
+    <None Include="wwwroot\Uploads\Images\be3e82b7-106d-45db-894d-4c08018f6413.png" />
+    <None Include="wwwroot\Uploads\Images\c16bdfb5-16dc-4445-9488-b9807339831c.png" />
+    <None Include="wwwroot\Uploads\Images\c9240305-ab62-4e37-b6fd-67b52f5309d5.png" />
+    <None Include="wwwroot\Uploads\Images\ca9b760e-e0cd-46ae-8567-bc36407562bb.jpg" />
+    <None Include="wwwroot\Uploads\Images\cc2eb362-71d0-4b0f-a3dc-869078399e22.png" />
+    <None Include="wwwroot\Uploads\Images\ce15d7bb-de5b-4edf-9d34-ab33de0e82cb.png" />
+    <None Include="wwwroot\Uploads\Images\d1feed0b-1600-4181-b1e4-19890162c74b.png" />
+    <None Include="wwwroot\Uploads\Images\d2ee4940-160a-4627-9c0d-d1d491c57d9a.png" />
+    <None Include="wwwroot\Uploads\Images\d5d1aacd-57bf-4335-b24d-503b55f4eaa2.png" />
+    <None Include="wwwroot\Uploads\Images\d8df1246-f4f3-417e-b334-a2fb8f9a3ea1.png" />
+    <None Include="wwwroot\Uploads\Images\d8f6b13c-1de2-4659-8018-6066d0376896.png" />
+    <None Include="wwwroot\Uploads\Images\dbe42e89-b1cb-4a5a-a574-b651dae119cd.png" />
+    <None Include="wwwroot\Uploads\Images\dca07019-68ad-4687-8869-f1631da19fda.png" />
+    <None Include="wwwroot\Uploads\Images\de3c70b3-8a97-49a5-bc42-bbadd95ba609.png" />
+    <None Include="wwwroot\Uploads\Images\df9f9a6e-9529-4ae4-adc3-1cbf35561645.png" />
+    <None Include="wwwroot\Uploads\Images\e745b137-4acc-4a78-9af3-d9aa34c9bd25.png" />
+    <None Include="wwwroot\Uploads\Images\ecc70755-3b18-430c-8652-fa334e94eecc.png" />
+    <None Include="wwwroot\Uploads\Images\fa550bd3-d5b6-495f-9ebf-9ab16ed65344.png" />
+    <None Include="wwwroot\Uploads\Images\fa71ae9f-fa4c-4417-b93c-2ececfc0b8d0.png" />
+    <None Include="wwwroot\Uploads\Images\fb883c5c-a8f7-4f32-b7e1-eaeaab23be55.png" />
+    <None Include="wwwroot\Uploads\Images\fc1e1712-c72b-4d19-9293-22f4cf94431b.png" />
+    <None Include="wwwroot\Uploads\Images\fea29a2b-d34d-48e6-8574-8ea2cc275cca.png" />
+    <None Include="wwwroot\Uploads\Images\ff104b4e-4f8d-4d8a-aede-972bd3b0a5d0.png" />
+    <None Include="wwwroot\Uploads\PropertysImages\property1_Image.jpg" />
+    <None Include="wwwroot\Uploads\PropertysImages\property2_Image.jpg" />
+    <None Include="wwwroot\Uploads\PropertysImages\property3_Image.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Uploads\Images\Contracts\" />
+  </ItemGroup>
+
+</Project>
