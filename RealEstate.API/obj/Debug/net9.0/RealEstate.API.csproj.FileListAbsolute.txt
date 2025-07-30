@@ -117,3 +117,4 @@ C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.API\obj\Debug\net9.0\RealEstat
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.API\obj\Debug\net9.0\RealEstate.API.genruntimeconfig.cache
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.API\obj\Debug\net9.0\ref\RealEstate.API.dll
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.API\obj\Debug\net9.0\RealEstate.API.sourcelink.json

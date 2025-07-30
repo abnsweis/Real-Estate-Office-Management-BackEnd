@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "RealEstate.API.Controllers.AccountController",
+    "Method": "Logout",
+    "RelativePath": "api/Account/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.AccountController",
     "Method": "GetProfile",
     "RelativePath": "api/Account/my",
     "HttpMethod": "GET",

@@ -14,3 +14,4 @@ C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Application\obj\Debug\net9.0\R
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Application\obj\Debug\net9.0\refint\RealEstate.Application.dll
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Application\obj\Debug\net9.0\RealEstate.Application.pdb
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Application\obj\Debug\net9.0\ref\RealEstate.Application.dll
+C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Application\obj\Debug\net9.0\RealEstate.Application.sourcelink.json

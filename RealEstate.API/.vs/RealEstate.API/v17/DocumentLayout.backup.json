@@ -3,31 +3,17 @@
   "WorkspaceRootPath": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\ratings\\querys\\isratingbyuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\dtos\\responsedto\\appresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\comments\\querys\\getpropertycomments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EAE38E5-158B-4B44-B051-6B6DC1E56200}|..\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.infrastructure\\data\\seeddata\\seedingdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\users\\commands\\updatecurrentuser\\updatecurrentusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\auth\\commands\\logout\\logincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAE38E5-158B-4B44-B051-6B6DC1E56200}|..\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.infrastructure\\repositorios\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\common\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,21 +22,47 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 718,
-          "SelectedChildIndex": 9,
+          "DockedWidth": 990,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAcwEEAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T05:09:40.891Z",
-              "IsPinned": true
+              "WhenOpened": "2025-07-30T19:34:48.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Repositorios\\Auth\\AuthService.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Infrastructure\\Repositorios\\Auth\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Repositorios\\Auth\\AuthService.cs",
+              "RelativeToolTip": "..\\RealEstate.Infrastructure\\Repositorios\\Auth\\AuthService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwC0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T19:31:30.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Common\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Common\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Common\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Common\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T19:31:09.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -86,91 +98,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAmwDIAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T09:31:37.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\ResponseDTO\\AppResponse.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Dtos\\ResponseDTO\\AppResponse.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\ResponseDTO\\AppResponse.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Dtos\\ResponseDTO\\AppResponse.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T08:15:57.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IsRatingByUserQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Ratings\\Querys\\IsRatingByUserQuery.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Ratings\\Querys\\IsRatingByUserQuery.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Ratings\\Querys\\IsRatingByUserQuery.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Ratings\\Querys\\IsRatingByUserQuery.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAQwC4AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T08:10:52.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RatingController.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\RatingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RatingController.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\RatingController.cs",
-              "RelativeToolTip": "Controllers\\RatingController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAkwCQAAAASAAAAAAAAAA==",
+              "Title": "LoginCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Auth\\Commands\\Logout\\LoginCommand.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Auth\\Commands\\Logout\\LoginCommand.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Auth\\Commands\\Logout\\LoginCommand.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Auth\\Commands\\Logout\\LoginCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T21:07:11.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetPropertyComments.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Comments\\Querys\\GetPropertyComments.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Comments\\Querys\\GetPropertyComments.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Comments\\Querys\\GetPropertyComments.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Comments\\Querys\\GetPropertyComments.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwEoAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T11:15:42.238Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SeedingData.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
-              "RelativeToolTip": "..\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAAAEEAAABbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T09:57:03.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UpdateCurrentUserCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Users\\Commands\\UpdateCurrentUser\\UpdateCurrentUserCommand.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Users\\Commands\\UpdateCurrentUser\\UpdateCurrentUserCommand.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Users\\Commands\\UpdateCurrentUser\\UpdateCurrentUserCommand.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Users\\Commands\\UpdateCurrentUser\\UpdateCurrentUserCommand.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAAFwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T07:25:14.46Z",
+              "WhenOpened": "2025-07-30T19:30:18.844Z",
               "EditorCaption": ""
             }
           ]

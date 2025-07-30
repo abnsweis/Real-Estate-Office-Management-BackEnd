@@ -7,5 +7,6 @@ namespace RealEstate.Application.Common.Interfaces
     {
 
         Task<Result<string>> Login(LoginDto login);   
+        Task LogoutAsync();
     }
 }

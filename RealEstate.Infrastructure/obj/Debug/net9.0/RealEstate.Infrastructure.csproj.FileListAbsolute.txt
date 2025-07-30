@@ -18,3 +18,4 @@ C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Infrastructure\obj\Debug\net9.
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Infrastructure\obj\Debug\net9.0\RealEstate.Infrastructure.pdb
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Infrastructure\obj\Debug\net9.0\RealEstate.Infrastructure.genruntimeconfig.cache
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Infrastructure\obj\Debug\net9.0\ref\RealEstate.Infrastructure.dll
+C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Infrastructure\obj\Debug\net9.0\RealEstate.Infrastructure.sourcelink.json

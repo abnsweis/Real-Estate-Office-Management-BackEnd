@@ -43,7 +43,9 @@ namespace RealEstate.Infrastructure.Repositorios.Auth
             return Result.Ok(token);
         }
 
-        
-
+        public async Task LogoutAsync()
+        {
+            await _signInManager.SignOutAsync();
+        }
     }
 }

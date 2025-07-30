@@ -29,7 +29,7 @@ namespace RealEstate.API.Controllers
 
          
         [HttpPost("register")]
-        public async Task<ActionResult<Guid>> Register(CreateUserDto createUserDTO)
+        public async Task<ActionResult<Guid>> Register([FromForm]CreateUserDto createUserDTO)
         {
             var response = await _mediator.Send(new CreateUserCommand(createUserDTO));
 
@@ -38,7 +38,7 @@ namespace RealEstate.API.Controllers
                 return response.Result.ToActionResult();
             }
 
-            return CreatedAtAction(nameof(UsersController), "GetUserById", new { Id = response.Data }, new { Id = response.Data });
+            return Created() ;
 
 
         }
@@ -50,7 +50,16 @@ namespace RealEstate.API.Controllers
             return response.Result.IsFailed ? response.Result.ToActionResult() : Ok(new { Token = response.Data });
         }
 
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            var response = await _mediator.Send(new LogoutCommand());
 
+            if (!response.Result.IsSuccess)
+                return response.Result.ToActionResult();
+
+            return Ok();
+        }
         [Authorize]
         [HttpGet("my")]
         public async Task<IActionResult> GetProfile()
