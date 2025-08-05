@@ -21,13 +21,13 @@ namespace RealEstate.Application.Features.Customers.Commands.Update
 {
     public record UpdateCustomerCommand : IRequest<AppResponse>, ICustomerDTO
     {
-        public Guid CustomerId { get; set; }
-        public string fullName { get; set; }
-        public string nationalId { get; set; }
-        public string phoneNumber { get; set; }
-        public string dateOfBirth { get; set; }
-        public enGender gender { get; set; }
-        public enCustomerType customerType { get; set; }
+        public Guid? CustomerId { get; set; }
+        public string? fullName { get; set; }
+        public string? nationalId { get; set; }
+        public string? phoneNumber { get; set; }
+        public string? dateOfBirth { get; set; }
+        public enGender? gender { get; set; }
+        public enCustomerType? customerType { get; set; }
     }
 
 
@@ -78,9 +78,9 @@ namespace RealEstate.Application.Features.Customers.Commands.Update
 
             Customer.Person.FullName = request.fullName;
             Customer.Person.NationalId = request.nationalId;
-            Customer.Person.Gender = request.gender;
+            Customer.Person.Gender = request.gender.Value;
             Customer.Person.DateOfBirth = DateOnly.Parse(request.dateOfBirth);
-            Customer.CustomerType = request.customerType;
+            Customer.CustomerType = request.customerType.Value;
             Customer.PhoneNumber = request.phoneNumber;
 
 

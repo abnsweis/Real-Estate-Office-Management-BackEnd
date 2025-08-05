@@ -1,10 +1,8 @@
 ﻿using FluentValidation;
 using RealEstate.Application.Common;
-using RealEstate.Application.Features.Properties.Commands;
-using RealEstate.Application.Features.Propertys.Commands.Update;
 using RealEstate.Domain.Enums;
 
-namespace RealEstate.Application.Features.Customers.Commands.Update
+namespace RealEstate.Application.Features.Propertys.Commands.Update
 {
     public class UpdatePropertyValidator : AbstractValidator<UpdatePropertyCommand>
     {
@@ -13,9 +11,9 @@ namespace RealEstate.Application.Features.Customers.Commands.Update
         {
             RuleFor(cmd => cmd.Data.Title)
                 .NotEmpty()
-                    .WithMessage("Title Field is Required")
-                    .WithErrorCode(enApiErrorCode.RequiredField.ToString())
-                    .OverridePropertyName("Title");
+                    .WithMessage("Title Field is Required222222222222222")
+                    .WithErrorCode(enApiErrorCode.RequiredField.ToString());
+                     
             RuleFor(cmd => cmd.Data.CategoryId)
                 .NotEmpty()
                     .WithMessage("Category Id Field is Required")
@@ -56,7 +54,7 @@ namespace RealEstate.Application.Features.Customers.Commands.Update
                 .NotEmpty()
                     .WithMessage("Image is required")
                     .WithErrorCode(enApiErrorCode.RequiredField.ToString())
-                .Must(list => list.Count > 0)
+                .Must(list => list?.Count > 0)
                     .WithMessage("You must upload at least one image")
                     .WithErrorCode(enApiErrorCode.MinimumLengthViolated.ToString()).OverridePropertyName("Images");
         }

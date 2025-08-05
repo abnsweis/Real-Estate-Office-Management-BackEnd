@@ -25,7 +25,7 @@ namespace RealEstate.Application.Dtos.Property
 
         public IFormFile? Video { get; set; }
 
-        public List<IFormFile> Images { get; set; }
+        public List<IFormFile>? Images { get; set; }
 
         public string? Description { get; set; }  
     }

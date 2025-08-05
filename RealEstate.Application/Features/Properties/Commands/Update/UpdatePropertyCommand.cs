@@ -3,16 +3,12 @@ using FluentResults;
 using MediatR;
 using RealEstate.Application.Common.Errors;
 using RealEstate.Application.Common.Interfaces.RepositoriosInterfaces;
+using RealEstate.Application.Common.Interfaces.Services;
 using RealEstate.Application.Dtos.Property;
-using RealEstate.Application.Dtos.Interfaces;
 using RealEstate.Application.Dtos.ResponseDTO;
+using RealEstate.Application.Features.Properties.Commands;
 using RealEstate.Domain.Enums;
 using Error = FluentResults.Error;
-using RealEstate.Application.Features.Properties.Commands.Create;
-using RealEstate.Application.Common.Interfaces.Services;
-using Microsoft.AspNetCore.Http;
-using RealEstate.Domain.Entities;
-using RealEstate.Application.Features.Properties.Commands;
 
 namespace RealEstate.Application.Features.Propertys.Commands.Update
 {
@@ -81,15 +77,19 @@ namespace RealEstate.Application.Features.Propertys.Commands.Update
                 await _propertyRepository.UpdateAsync(property);
                 var rowsAffacted = await _propertyRepository.SaveChangesAsync();
 
-
+                if (request.Data.Images is not null)
+                {
+                    
                 if (rowsAffacted > 0)
                 {
 
 
                     foreach (var img in property.PropertyImages)
                     {
-                        _fileManager.DeleteFile(img.ImageUrl);  
+                        _fileManager.DeleteFile(img.ImageUrl);
                     }
+                    _propertyImageRepository.Delete(property.Id);
+
 
                     var ImagesPath = await PerformPropertyImages(request.Data.Images);
 
@@ -98,6 +98,7 @@ namespace RealEstate.Application.Features.Propertys.Commands.Update
 
                     var SaveingImagesResults = await SavePropertyImages(property.Id, ImagesPath.Value);
                     if (SaveingImagesResults.IsFailed) return AppResponse.Fail(SaveingImagesResults.Errors);
+                }
                 }
 
 

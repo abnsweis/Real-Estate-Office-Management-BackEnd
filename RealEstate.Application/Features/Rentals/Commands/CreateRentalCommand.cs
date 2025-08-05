@@ -143,7 +143,7 @@ namespace RealEstate.Application.Features.Rentals.Commands
 
             if (request.Data.LessorId == request.Data.LesseeId)
             {
-                errors.Add(new ConflictError("LessorId", "Lessor and Lessee cannot be the same person.", enApiErrorCode.SellerAndBuyerCannotBeSame));
+                errors.Add(new ConflictError("LessorId", "Lessor and Lessee cannot be the same person.", enApiErrorCode.sssssssssssssss));
             }
 
 

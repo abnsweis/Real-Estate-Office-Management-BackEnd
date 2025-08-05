@@ -10,12 +10,12 @@ namespace RealEstate.Application.Dtos.Interfaces
 {
     public interface ICustomerDTO
     {
-        string fullName { get; } 
-        string phoneNumber { get; }
-        string nationalId { get; }
-        enGender gender { get; }
-        enCustomerType customerType { get; set; }
-        string dateOfBirth { get; } 
+        string? fullName { get; } 
+        string? phoneNumber { get; }
+        string? nationalId { get; }
+        enGender? gender { get; }
+        enCustomerType? customerType { get; set; }
+        string? dateOfBirth { get; } 
     }
      
 }

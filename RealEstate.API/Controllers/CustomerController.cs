@@ -120,7 +120,7 @@ namespace RealEstate.API.Controllers
         [HttpGet("NationalId/{NationalId}")]
         public async Task<IActionResult> GetCustomerByNationalId(string NationalId)
         {
-            var results = await _mediator.Send(new GetCustomerNationalIdIdQuery(NationalId));
+            var results = await _mediator.Send(new GetCustomerByNationalIdQuery(NationalId));
             return results.ToActionResult();
         }
 

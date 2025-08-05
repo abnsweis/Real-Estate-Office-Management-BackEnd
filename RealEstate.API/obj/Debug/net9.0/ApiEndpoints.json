@@ -429,7 +429,7 @@
       },
       {
         "Name": "CustomerId",
-        "Type": "System.Guid",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -1373,11 +1373,6 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 201
-      },
-      {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
         "MediaTypes": [
           "text/plain",
@@ -1396,6 +1391,22 @@
         "StatusCode": 404
       }
     ]
+  },
+  {
+    "ContainingType": "PropertiesController",
+    "Method": "TestValidation",
+    "RelativePath": "api/Properties/Update/{propertyId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "propertyId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "PropertiesController",
@@ -2415,5 +2426,34 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PropertiesController",
+    "Method": "GetPropertiesCount",
+    "RelativePath": "count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "RealEstate.Application.Common.Pagination.PaginationResponse\u00601[[RealEstate.Application.Dtos.Property.PropertyDTO, RealEstate.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
   }
 ]

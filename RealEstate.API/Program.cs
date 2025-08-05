@@ -1,4 +1,5 @@
 using FluentResults.Extensions.AspNetCore;
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -8,6 +9,7 @@ using RealEstate.Application;
 using RealEstate.Application.Common;
 using RealEstate.Application.Common.Interfaces;
 using RealEstate.Application.Common.Interfaces.Services;
+using RealEstate.Application.Features.Customers.Commands.Update;
 using RealEstate.Infrastructure.Data;
 using RealEstate.Infrastructure.Data.SeedData;
 using RealEstate.Infrastructure.Persistence;
@@ -26,8 +28,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddWeb(builder.Configuration);
-builder.Services.AddApplication(builder.Configuration);
- 
+builder.Services.AddApplication(builder.Configuration); 
+
 
 builder.Services.AddSingleton<CustomAspNetCoreResultEndpointProfile>();
 builder.Services.AddScoped<IAuthService, AuthService>();

@@ -52,7 +52,7 @@ namespace RealEstate.Application.Features.Properties.Commands.Create
 
             RuleFor(cmd => cmd.Data.Images)
                 .NotEmpty()
-                    .WithMessage("Image is required")
+                    .WithMessage("Image is required8888888888888")
                     .WithErrorCode(enApiErrorCode.RequiredField.ToString())
                 .Must(list => list.Count > 0)
                     .WithMessage("You must upload at least one image")

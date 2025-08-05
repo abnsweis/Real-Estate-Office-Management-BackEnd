@@ -11,13 +11,18 @@ using System.Threading.Tasks;
 
 namespace RealEstate.Infrastructure.Repositorios
 {
-    public class PropertyImageRepository : Repository<PropertyImage> , IPropertyImageRepository
+    public class PropertyImageRepository : Repository<PropertyImage>, IPropertyImageRepository
     {
         private readonly ApplicationDbContext _context;
 
         public PropertyImageRepository(ApplicationDbContext context) : base(context) 
         {
             this._context = context;
+        }
+
+        public void Delete(Guid propertyId)
+        {
+            _context.Database.ExecuteSqlRaw("DELETE FROM PropertyImages WHERE PropertyID = {0}", propertyId);
         }
 
         public List<PropertyImage> GetImageByPropertyIdAsync(Guid propertyId)

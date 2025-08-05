@@ -117,8 +117,7 @@ public enum enApiErrorCode {
     CreationFailed = 4503,
 
     // --- 5000 - 5499 : Rentals  Errors ---
-    RentalNotFound = 5000,
-    LessorAndLesseeCannotBeSame = 5001,
+    RentalNotFound = 5000, 
     LessorNotOwner = 5002,
 
     // --- 5500 - 5999 : Testimonials  Errors ---
@@ -128,5 +127,6 @@ public enum enApiErrorCode {
     CommentNotFound = 6000,
 
     // --- 6500 - 6999 : favorites  Errors ---
-    FavoriteNotFound = 6501, 
+    FavoriteNotFound = 6501,
+    sssssssssssssss = 6501, 
 }

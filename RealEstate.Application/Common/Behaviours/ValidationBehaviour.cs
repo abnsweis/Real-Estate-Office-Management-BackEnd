@@ -18,6 +18,8 @@ namespace RealEstate.Application.Common.Behaviours
 
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
+            // ERROR CODES HERE IS LessorAndLesseeCannotBeSame
+
             if (_validators.Any())
             {
                 var context = new ValidationContext<TRequest>(request);
@@ -35,6 +37,7 @@ namespace RealEstate.Application.Common.Behaviours
                     var errors = failures
                         .Select(f =>
                         {
+                            Console.WriteLine($"\n\n\nParsing ErrorCode: {f.ErrorCode}\n\n\n");
                             if (!Enum.TryParse<enApiErrorCode>(f.ErrorCode, out var errorCode))
                             {
                                 errorCode = enApiErrorCode.Unknown;
@@ -45,10 +48,10 @@ namespace RealEstate.Application.Common.Behaviours
                         .Cast<IError>()
                         .ToList();
 
-
-
+                    // **** لا يدخل على هي ال if
                     if (typeof(TResponse).IsGenericType && typeof(TResponse).GetGenericTypeDefinition() == typeof(AppResponse<>))
                     {
+                     // لا يدخل هنا 
                         var dataType = typeof(TResponse).GetGenericArguments()[0];
 
                         var method = typeof(AppResponse<>)
@@ -58,6 +61,10 @@ namespace RealEstate.Application.Common.Behaviours
                         var failedAppResponse = method!.Invoke(null, new object[] { errors });
 
                         return (TResponse)failedAppResponse!;
+                    } else if (typeof(TResponse) == typeof(AppResponse))
+                    {
+                        var failedAppResponse = AppResponse.Fail(errors);
+                        return (TResponse)(object)failedAppResponse; // لازم تحويل نوع (cast) قوي
                     }
                 }
             }

@@ -3,17 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\controllers\\propertiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:controllers\\propertiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\properties\\commands\\create\\createpropertycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\properties\\querys\\getpropertiespropertiestop7query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\properties\\querys\\get\\getlatesttop7propertiesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\properties\\querys\\get\\getpropertiescountquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -60,53 +54,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-05T07:52:23.172Z",
+              "Title": "PropertiesController.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\PropertiesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PropertiesController.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\PropertiesController.cs",
+              "RelativeToolTip": "Controllers\\PropertiesController.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAlwC0BAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T19:50:17.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CreatePropertyCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Commands\\Create\\CreatePropertyCommand.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Properties\\Commands\\Create\\CreatePropertyCommand.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Commands\\Create\\CreatePropertyCommand.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Properties\\Commands\\Create\\CreatePropertyCommand.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAawFoAAAAMAAAAAAAAAA==",
+              "Title": "GetPropertiesCountQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T06:58:02.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetPropertiesPropertiesTop7Query.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\GetPropertiesPropertiesTop7Query.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Properties\\Querys\\GetPropertiesPropertiesTop7Query.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\GetPropertiesPropertiesTop7Query.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Properties\\Querys\\GetPropertiesPropertiesTop7Query.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwDsAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T06:56:56.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetLatestTop7PropertiesQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetLatestTop7PropertiesQuery.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetLatestTop7PropertiesQuery.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetLatestTop7PropertiesQuery.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetLatestTop7PropertiesQuery.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowCwAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T06:56:34.174Z",
+              "WhenOpened": "2025-08-05T19:46:30.093Z",
               "EditorCaption": ""
             }
           ]

@@ -14,12 +14,12 @@ namespace RealEstate.Application.Features.Customers.Commands.Create
 {
     public class CreateCustomerCommand : IRequest<AppResponse<Guid>>, ICustomerDTO
     {
-        public string fullName { get; set; }
-        public string nationalId { get; set; }
-        public string phoneNumber { get; set; }
-        public string dateOfBirth { get; set; }
-        public enGender gender { get; set; }
-        public enCustomerType customerType { get; set; }
+        public string? fullName { get; set; }
+        public string? nationalId { get; set; }
+        public string? phoneNumber { get; set; }
+        public string? dateOfBirth { get; set; }
+        public enGender? gender { get; set; }
+        public enCustomerType? customerType { get; set; }
     }
 
 
@@ -54,7 +54,7 @@ namespace RealEstate.Application.Features.Customers.Commands.Create
                 errors.Add(new ConflictError(nameof(request.phoneNumber), "Phone Number Already Taken", enApiErrorCode.PhoneAlreadyTaken));
             }
 
-            if (_customerRepository.IsCustomerExists(request.nationalId, request.customerType))
+            if (_customerRepository.IsCustomerExists(request.nationalId, request.customerType.Value))
             {
                 var error = new ConflictError(nameof(request.nationalId), $"A customer with the same national ID is already registered as a {request.customerType}.", enApiErrorCode.DuplicateCustomer);
                 return new AppResponse<Guid> { Result = Result.Fail(error) };
@@ -68,7 +68,7 @@ namespace RealEstate.Application.Features.Customers.Commands.Create
 
                     PersonId = existingCustomer.PersonId,
                     PhoneNumber = existingCustomer.PhoneNumber,
-                    CustomerType = request.customerType,
+                    CustomerType = request.customerType.Value,
 
                 };
 
@@ -87,13 +87,13 @@ namespace RealEstate.Application.Features.Customers.Commands.Create
                 {
 
                     PhoneNumber = request.phoneNumber,
-                    CustomerType = request.customerType,
+                    CustomerType = request.customerType.Value,
                     Person = new Person
                     {
                         FullName = request.fullName,
                         NationalId = request.nationalId,
                         DateOfBirth = DateOnly.Parse(request.dateOfBirth),
-                        Gender = request.gender,
+                        Gender = request.gender.Value,
                         ImageURL = _Imagepath,
                     }
 

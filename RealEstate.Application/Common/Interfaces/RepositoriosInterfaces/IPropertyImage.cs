@@ -11,5 +11,7 @@ namespace RealEstate.Application.Common.Interfaces.RepositoriosInterfaces
     {
 
         List<PropertyImage> GetImageByPropertyIdAsync(Guid propertyId);
+
+        void Delete(Guid propertyId);
     }
 }

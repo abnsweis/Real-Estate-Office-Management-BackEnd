@@ -229,11 +229,6 @@
             Controller for managing Property operations
             </summary>
         </member>
-        <member name="M:PropertiesController.#ctor(MediatR.ISender)">
-            <summary>
-            Constructor for injecting dependencies
-            </summary>
-        </member>
         <member name="M:PropertiesController.GetAllProperties(RealEstate.Application.Common.Pagination.PaginationRequest,RealEstate.Application.Dtos.Property.FilterPropertiesDTO)">
             <summary>
             Retrieves all properties with optional filtering and pagination.
@@ -289,6 +284,14 @@
             <returns>List of properties with the specified status</returns>
         </member>
         <member name="M:PropertiesController.GetPropertiesByLocation(System.String,RealEstate.Application.Common.Pagination.PaginationRequest)">
+            <summary>
+            Retrieves properties by location.
+            </summary>
+            <param name="location">The location</param>
+            <param name="pagination">Pagination parameters</param>
+            <returns>List of properties at the specified location</returns>
+        </member>
+        <member name="M:PropertiesController.GetPropertiesCount">
             <summary>
             Retrieves properties by location.
             </summary>
