@@ -19,6 +19,7 @@ namespace RealEstate.Application.Common.Mappings
                 .ForMember(dest => dest.PropertyStatus , opt => opt.MapFrom(src => src.PropertyStatus.ToString()))
                 .ForPath(dest => dest.CategoryName , opt => opt.MapFrom(src => src.Category.CategoryName)) 
                 .ForPath(dest => dest.OwnerFullName , opt => opt.MapFrom(src => src.Owner.Person.FullName))
+                .ForPath(dest => dest.OwnerNationalId , opt => opt.MapFrom(src => src.Owner.Person.NationalId))
                 .ForPath(dest => dest.Rating , opt => opt.MapFrom(src => src.Ratings.Any() ? src.Ratings.Average( r=>r.RatingNumber):0))
                 .ForPath(dest => dest.Images , opt => opt.MapFrom(src => src.PropertyImages.Select(
                     
@@ -31,8 +32,7 @@ namespace RealEstate.Application.Common.Mappings
 
 
 
-            CreateMap<CreatePropertyDTO, Property>()
-                .ForMember(dest => dest.OwnerId, opt => opt.MapFrom(src => src.OwnerId))
+            CreateMap<CreatePropertyDTO, Property>() 
                 .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.CategoryId))
                 .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.CategoryId))
                 ;

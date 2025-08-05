@@ -1,4 +1,5 @@
-﻿using RealEstate.Application.Common.Interfaces.RepositoriosInterfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using RealEstate.Application.Common.Interfaces.RepositoriosInterfaces;
 using RealEstate.Domain.Entities;
 using RealEstate.Domain.Enums;
 using RealEstate.Infrastructure.Data;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RealEstate.Infrastructure.Repositorios
 {
@@ -17,6 +19,17 @@ namespace RealEstate.Infrastructure.Repositorios
         public CustomerRepository(ApplicationDbContext context) : base(context) {
         
             this._context = context;
+        }
+
+        public async Task<int> CountCreatedInCurrentMonth()
+        {
+            var now = DateTimeOffset.Now;  
+
+            var startOfMonth = new DateTimeOffset(now.Year, now.Month, 1, 0, 0, 0, now.Offset);
+            var endOfMonth = startOfMonth.AddMonths(1);
+
+            return await _context.Customers
+                .CountAsync(c => c.CreatedDate >= startOfMonth && c.CreatedDate < endOfMonth);
         }
 
         public Customer? GetCustomerByNationalId(string nationalId)

@@ -12,6 +12,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RealEstate.Infrastructure.Repositorios
 {
@@ -24,7 +25,7 @@ namespace RealEstate.Infrastructure.Repositorios
     /// - No-tracking queries
     /// </summary>
     /// <typeparam name="TEntity">The entity type this repository works with.</typeparam>
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class 
     {
         private readonly ApplicationDbContext _context;
 
@@ -290,5 +291,7 @@ namespace RealEstate.Infrastructure.Repositorios
         }
 
         public DbContext GetDbContext() => _context;
+
+         
     }
 }

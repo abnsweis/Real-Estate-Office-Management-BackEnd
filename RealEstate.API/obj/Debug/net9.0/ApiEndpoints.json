@@ -556,6 +556,22 @@
   },
   {
     "ContainingType": "RealEstate.API.Controllers.CustomersController",
+    "Method": "GetLatestCustomers",
+    "RelativePath": "api/Customers/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.CustomersController",
     "Method": "GetCustomerByNationalId",
     "RelativePath": "api/Customers/NationalId/{NationalId}",
     "HttpMethod": "GET",
@@ -755,7 +771,7 @@
         "IsRequired": false
       },
       {
-        "Name": "OwnerId",
+        "Name": "OwnerNationalId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -963,6 +979,35 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "PropertiesController",
+    "Method": "GetLatestTop7Properties",
+    "RelativePath": "api/Properties/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "RealEstate.Application.Common.Pagination.PaginationResponse\u00601[[RealEstate.Application.Dtos.Property.PropertyDTO, RealEstate.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       },
       {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
@@ -1980,6 +2025,68 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.StatisticsController",
+    "Method": "GetAllCategories",
+    "RelativePath": "api/Statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.StatisticsController",
+    "Method": "GetMonthlyRentalsByYear",
+    "RelativePath": "api/Statistics/monthly-rentals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.StatisticsController",
+    "Method": "GetMonthlySalesByYear",
+    "RelativePath": "api/Statistics/monthly-sales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.StatisticsController",
+    "Method": "GetTotalRentalsRevenue",
+    "RelativePath": "api/Statistics/total-rentals-revenue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.StatisticsController",
+    "Method": "GetTotalSalesRevenue",
+    "RelativePath": "api/Statistics/total-sales-revenue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

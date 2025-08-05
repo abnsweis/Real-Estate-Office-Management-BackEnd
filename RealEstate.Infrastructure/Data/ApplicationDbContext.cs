@@ -40,7 +40,7 @@ namespace RealEstate.Infrastructure.Data
         }
 
         //public ApplicationDbContext() : base(new DbContextOptionsBuilder<ApplicationDbContext>()
-        //    .UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=New_REOMPDb;Trusted_Connection=True;")
+        //    .UseSqlServer("Server = . ; Database=RealEstateDB;User Id = sa;Password = sweis2003 ;Integrated Security=True;TrustServerCertificate=True;")
         //    .Options)
         //{
         //}

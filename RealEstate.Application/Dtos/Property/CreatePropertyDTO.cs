@@ -13,7 +13,7 @@ namespace RealEstate.Application.Dtos.Property
     {
         public string? Title { get; set; }  
 
-        public string? OwnerId { get; set; } 
+        public string? OwnerNationalId { get; set; } 
 
         public string? CategoryId { get; set; }  
 

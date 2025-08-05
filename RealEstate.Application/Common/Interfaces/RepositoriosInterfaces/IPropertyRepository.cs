@@ -8,6 +8,7 @@ namespace RealEstate.Application.Common.Interfaces.RepositoriosInterfaces
         List<Property> GetOwnerProperties(Guid ownerId);
         List<Property> GetFeatured(Guid ownerId);
         Task<List<Property>> GetFeaturedPropertiesTop7(params Expression<Func<Property, object>>[]? includes);
+        Task<List<Property>> GetLatestTop7Properties(params Expression<Func<Property, object>>[]? includes);
         Task<bool> IsPropertyyExistsByPropertyNumber(string propertyNumber);
         bool IsPropertyExistsById(Guid propertyId);
 

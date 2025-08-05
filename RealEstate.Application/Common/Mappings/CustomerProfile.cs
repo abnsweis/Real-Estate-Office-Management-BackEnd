@@ -22,6 +22,7 @@ namespace RealEstate.Application.Common.Mappings
                 .ForMember(dest => dest.NationalId, opt => opt.MapFrom(src => src.Person.NationalId))
                 .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
                 .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.Person.DateOfBirth))
+                .ForMember(dest => dest.ImageURL, opt => opt.MapFrom(src => src.Person.ImageURL))
                 .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Person.Gender.ToString()))
                 .ForMember(dest => dest.customerType, opt => opt.MapFrom(src => src.CustomerType.ToString()));
         }

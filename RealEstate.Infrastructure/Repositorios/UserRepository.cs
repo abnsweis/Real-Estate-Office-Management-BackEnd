@@ -252,6 +252,11 @@ namespace RealEstate.Infrastructure.Repositorios
         {
             return _userManager.Users.Any(user => user.Id == id && user.IsDeleted == false);
         }
-         
+
+        public async Task<int> AdminsCountAsync()
+        {
+            var admins = await _userManager.GetUsersInRoleAsync("Admin");
+            return admins.Count;
+        }
     } 
 }

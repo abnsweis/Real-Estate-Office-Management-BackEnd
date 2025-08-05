@@ -60,13 +60,10 @@ namespace RealEstate.Application.Features.Properties.Commands.Create
 
 
 
-            RuleFor(cmd => cmd.Data.OwnerId)
+            RuleFor(cmd => cmd.Data.OwnerNationalId)
                 .NotEmpty()
                     .WithMessage("Owner Id Field is Required")
                     .WithErrorCode(enApiErrorCode.RequiredField.ToString())
-                .Must(p => Utils.isGuid(p))
-                    .WithMessage("Invalid GUID format")
-                    .WithErrorCode(enApiErrorCode.InvalidGuid.ToString())
                     .OverridePropertyName("OwnerId");
              
         }

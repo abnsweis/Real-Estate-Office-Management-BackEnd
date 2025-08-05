@@ -39,9 +39,9 @@ namespace RealEstate.Application.Features.Properties.Commands
         {
             List<Error> errors = new();
 
-            if (!_customerRepository.IsCustomerExists(Guid.Parse(request.Data.OwnerId!)))
+            if (!_customerRepository.IsCustomerExists(request.Data.OwnerNationalId!))
             {
-                errors.Add(new ValidationError("OwnerId", $"Not Found Owner With Id {request.Data.OwnerId}", enApiErrorCode.CustomerNotFound));
+                errors.Add(new ValidationError("OwnerNationalId", $"Not Found Owner With OwnerNationalId {request.Data.OwnerNationalId}", enApiErrorCode.CustomerNotFound));
             }
 
             if (!_categoryRepository.IsCategoryExists(Guid.Parse(request.Data.CategoryId!)))

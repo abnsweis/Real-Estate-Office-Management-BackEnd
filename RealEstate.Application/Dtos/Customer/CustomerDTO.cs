@@ -21,5 +21,6 @@ namespace RealEstate.Application.Dtos.CustomerDTO
         public string Gender { get; set; }  
 
         public string customerType { get; set; } 
+        public string ImageURL { get; set; } 
     }
 }

@@ -53,11 +53,13 @@ namespace RealEstate.Application.Features.Properties.Commands.Create
 
             var propertyNumber = await GenerateUniquePropertyNumberAsync();
 
+            var coustomer= _customerRepository.GetCustomerByNationalId(request.Data.OwnerNationalId!);
 
             Property property = _mapper.Map<Property>(request.Data);
 
             property.PropertyNumber = propertyNumber;
             property.PropertyStatus = enPropertyStatus.Available;
+            property.OwnerId = coustomer.Id;
 
 
             var createVideoPathResults = await PerformPropertyVideoAsync(request.Data.Video);

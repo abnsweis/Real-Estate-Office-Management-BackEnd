@@ -10,6 +10,7 @@ namespace RealEstate.Application.Common.Interfaces.RepositoriosInterfaces
     {
         // Count Users matching filter
         Task<int> CountAsync(Expression<Func<UserDomain, bool>>? filter = null);
+        Task<int> AdminsCountAsync();
 
         // Add new user
         Task<AppResponse<Guid>> AddAsync(UserDomain user, CancellationToken cancellationToken = default);

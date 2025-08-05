@@ -21,7 +21,10 @@ namespace RealEstate.API.Controllers
 
 
         private readonly ISender _mediator;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mediator"></param>
         public CustomersController(ISender mediator)
         {
             this._mediator = mediator;
@@ -39,6 +42,17 @@ namespace RealEstate.API.Controllers
             return Ok(customers);
         }
 
+        /// <summary>
+        /// Get latest customers (Top 5)
+        /// </summary>
+        /// <param name="count">Optional: number of customers to retrieve (default is 5)</param>
+        /// <returns>List of latest customers</returns>
+        [HttpGet("latest")]
+        public async Task<IActionResult> GetLatestCustomers([FromQuery] int count = 5)
+        {
+            var latestCustomers = await _mediator.Send(new GetTopLatestCustomersQuery(count));
+            return Ok(latestCustomers);
+        }
 
         /// <summary>
         /// Get all buyers

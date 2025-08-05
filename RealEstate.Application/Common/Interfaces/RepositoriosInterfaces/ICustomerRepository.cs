@@ -10,6 +10,7 @@ namespace RealEstate.Application.Common.Interfaces.RepositoriosInterfaces
         bool IsCustomerExists(string nationalId, enCustomerType customerType);
         bool IsCustomerExists(string nationalId);
         bool IsCustomerExists(Guid ownerId);
+        Task<int> CountCreatedInCurrentMonth();
 
     }
 }

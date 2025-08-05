@@ -34,6 +34,14 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.Configure<FileSettings>(
    builder.Configuration.GetSection("Files")
 );
+
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });

@@ -17,7 +17,7 @@ using RealEstate.Application.Features.Propertys.Commands.Update;
 /// </summary>
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+
 public class PropertiesController : ControllerBase
 {
     private readonly ISender _mediator;
@@ -50,6 +50,14 @@ public class PropertiesController : ControllerBase
     public async Task<IActionResult> GetFeaturedPropertiesTop7()
     {
         var response = await _mediator.Send(new GetFeaturedPropertiesTop7Query());
+        return response.Result.IsFailed ? response.Result.ToActionResult() : Ok(response.Data);
+    }
+    [HttpGet("latest")]
+    [ProducesResponseType(typeof(PaginationResponse<PropertyDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> GetLatestTop7Properties()
+    {
+        var response = await _mediator.Send(new GetLatestTop7PropertiesQuery());
         return response.Result.IsFailed ? response.Result.ToActionResult() : Ok(response.Data);
     }
     /// <summary>

@@ -9,3 +9,4 @@ C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Domain\obj\Debug\net9.0\RealEs
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Domain\obj\Debug\net9.0\refint\RealEstate.Domain.dll
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Domain\obj\Debug\net9.0\RealEstate.Domain.pdb
 C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Domain\obj\Debug\net9.0\ref\RealEstate.Domain.dll
+C:\Users\Windows_OS\Desktop\RealEstate\RealEstate.Domain\obj\Debug\net9.0\RealEstate.Domain.sourcelink.json

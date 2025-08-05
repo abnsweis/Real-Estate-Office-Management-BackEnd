@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace RealEstate.Application.Features.Properties.Querys
 {
     public class GetFeaturedPropertiesTop7Query : IRequest<AppResponse<List<PropertyDTO>>>{}
-    public class GetPropertiesPropertiesTop7QueryHandler : IRequestHandler<GetFeaturedPropertiesTop7Query, AppResponse<List<PropertyDTO>>>
+    public class GetFeaturedPropertiesTop7QueryHandler : IRequestHandler<GetFeaturedPropertiesTop7Query, AppResponse<List<PropertyDTO>>>
     {
         private readonly IPropertyRepository _propertyRepository;
         private readonly IFileManager _fileManager;
@@ -28,7 +28,7 @@ namespace RealEstate.Application.Features.Properties.Querys
         /// <param name="propertyRepository">Property repository interface</param>
         /// <param name="fileManager">File manager service for handling media files</param>
         /// <param name="mapper">AutoMapper instance for object mapping</param>
-        public GetPropertiesPropertiesTop7QueryHandler(
+        public GetFeaturedPropertiesTop7QueryHandler(
             IPropertyRepository propertyRepository,
             IFileManager fileManager,
             IMapper mapper)

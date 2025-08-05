@@ -74,6 +74,12 @@
             Controller for managing customer operations
             </summary>
         </member>
+        <member name="M:RealEstate.API.Controllers.CustomersController.#ctor(MediatR.ISender)">
+            <summary>
+            
+            </summary>
+            <param name="mediator"></param>
+        </member>
         <member name="M:RealEstate.API.Controllers.CustomersController.GetAllCustomers(RealEstate.Application.Common.Pagination.PaginationRequest,RealEstate.Application.Dtos.CustomerDTO.FiltterCustomersDTO)">
             <summary>
             Get all customers with filtering and pagination capabilities
@@ -81,6 +87,13 @@
             <param name="pagination">Pagination parameters</param>
             <param name="filtter">Customer filtering parameters</param>
             <returns>List of customers matching the criteria</returns>
+        </member>
+        <member name="M:RealEstate.API.Controllers.CustomersController.GetLatestCustomers(System.Int32)">
+            <summary>
+            Get latest customers (Top 5)
+            </summary>
+            <param name="count">Optional: number of customers to retrieve (default is 5)</param>
+            <returns>List of latest customers</returns>
         </member>
         <member name="M:RealEstate.API.Controllers.CustomersController.GetBuyers(RealEstate.Application.Common.Pagination.PaginationRequest)">
             <summary>

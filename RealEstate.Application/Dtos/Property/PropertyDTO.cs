@@ -24,6 +24,7 @@ namespace RealEstate.Application.Dtos.Property
         public string MainImage { get; set; }
         public string CategoryName { get; set; } 
         public string OwnerFullName { get; set; }
+        public string OwnerNationalId { get; set; }
         public List<string> Images { get; set; } = new List<string>();
     }
 }
