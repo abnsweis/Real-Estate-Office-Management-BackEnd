@@ -34,6 +34,7 @@ namespace RealEstate.Application.Features.Sales.Commands
         private readonly ISalesRepository _salesRepository;
         private readonly IMapper _mapper;
 
+        private Guid _sellerId = Guid.Empty;
         public CreateSaleCommandHandler(
             IPropertyRepository propertyRepository,
             ICustomerRepository customerRepository,
@@ -53,7 +54,7 @@ namespace RealEstate.Application.Features.Sales.Commands
         public async Task<AppResponse<Guid>> Handle(CreateSaleCommand request, CancellationToken cancellationToken)
         {
 
-            var validationResults = _ValideteSaleData(request);
+            var validationResults = await _ValideteSaleData(request);
 
             if (validationResults.IsFailed)
             {
@@ -66,13 +67,15 @@ namespace RealEstate.Application.Features.Sales.Commands
             {
                 return AppResponse<Guid>.Fail(PCIU.Errors);
             }
+
+
             var sale = new Sale
             {
                 PropertyId = Guid.Parse(request.Data.PropertyId!),
-                SellerId = Guid.Parse(request.Data.SellerId!),
+                SellerId = this._sellerId,
                 BuyerId = Guid.Parse(request.Data.BuyerId!),
                 Price = request.Data.Price,
-                SaleDate = DateOnly.Parse(request.Data.SaleDate!),
+                SaleDate = DateOnly.FromDateTime(DateTimeOffset.UtcNow.Date),
                 Description = request.Data.Description ?? "",
                 ContractImageUrl = PCIU.Value
             };
@@ -87,7 +90,7 @@ namespace RealEstate.Application.Features.Sales.Commands
                 await _salesRepository.AddAsync(sale);
 
                 property!.OwnerId = Guid.Parse(request.Data.BuyerId!);
-                property.PropertyStatus = enPropertyStatus.Sold;
+                property.PropertyStatus = PropertyStatus.Sold;
                 await _salesRepository.SaveChangesAsync();
 
 
@@ -105,60 +108,45 @@ namespace RealEstate.Application.Features.Sales.Commands
 
 
 
-        private Result _ValideteSaleData(CreateSaleCommand request)
+        private async Task<Result> _ValideteSaleData(CreateSaleCommand request)
         {
             List<Error> errors = new();
             var isPropertyIdGuid = Guid.TryParse(request.Data.PropertyId, out var propertyId);
-            var isSellerIdGuid = Guid.TryParse(request.Data.SellerId, out var sellerId);
             var isBuyerIdGuid = Guid.TryParse(request.Data.BuyerId, out var buyerId);
-            var IsValidSaleDate = DateOnly.TryParse(request.Data.SaleDate, out var saleDate);
 
 
 
-            if (!isPropertyIdGuid || !isSellerIdGuid || !isBuyerIdGuid || !IsValidSaleDate)
+            if (!isPropertyIdGuid || !isBuyerIdGuid)
             {
                 if (!isPropertyIdGuid)
-                    errors.Add(new ValidationError("propertyId", "Invalid GUID format", enApiErrorCode.InvalidGuid));
-                else if (!isSellerIdGuid)
-                    errors.Add(new ValidationError("sellerId", "Invalid GUID format", enApiErrorCode.InvalidGuid));
+                    errors.Add(new ValidationError("property", "Invalid propertyId  format (GUID)", enApiErrorCode.InvalidGuid));
                 else if (!isBuyerIdGuid)
-                    errors.Add(new ValidationError("buyerId", "Invalid GUID format", enApiErrorCode.InvalidGuid));
-                else if (!IsValidSaleDate)
-                    errors.Add(new ValidationError("SaleDate", "Invalid SaleDate format", enApiErrorCode.InvalidDate));
+                    errors.Add(new ValidationError("Buyer", "Invalid GUID format", enApiErrorCode.InvalidGuid));
 
             }
 
 
-            if (!_customerRepository.IsCustomerExists(Guid.Parse(request.Data.SellerId!)))
-            {
-                errors.Add(new ValidationError("SellerId", $"Not Found Seller With Id {request.Data.SellerId}", enApiErrorCode.CustomerNotFound));
-            }
             if (!_customerRepository.IsCustomerExists(Guid.Parse(request.Data.BuyerId!)))
             {
-                errors.Add(new ValidationError("BuyerId", $"Not Found Buyer With Id {request.Data.BuyerId}", enApiErrorCode.CustomerNotFound));
+                errors.Add(new ValidationError("Buyer", $"Not Found Buyer With Id {request.Data.BuyerId}", enApiErrorCode.CustomerNotFound));
             }
 
-            if (!_propertyRepository.IsPropertyExistsById(Guid.Parse(request.Data.PropertyId!)))
+            var property = await _propertyRepository.GetByIdAsync(Guid.Parse(request.Data.PropertyId!));
+            if (property == null)
             {
-                errors.Add(new ValidationError("PropertyId", $"Not Found Property With Id {request.Data.PropertyId}", enApiErrorCode.PropertyNotFound));
+
+                errors.Add(new ValidationError("property", $"Not Found Property With Id {request.Data.PropertyId}", enApiErrorCode.PropertyNotFound));
+            }
+            else
+            {
+                this._sellerId = property!.OwnerId;
+
             }
 
 
-            if (request.Data.SellerId == request.Data.BuyerId)
+            if (!_propertyRepository.IsPropertyAvailable(propertyId))
             {
-                errors.Add(new ConflictError("SellerId", "Seller and Buyer cannot be the same person.", enApiErrorCode.SellerAndBuyerCannotBeSame));
-            }
-
-
-
-            if (_propertyRepository.GetPropertyOwnerId(propertyId) != sellerId)
-            {
-                errors.Add(new ConflictError("SellerId", "Seller is not the actual owner of the property.", enApiErrorCode.SellerNotOwner));
-            }
-
-            if (_propertyRepository.IsPropertyAvailable(propertyId))
-            {
-                errors.Add(new ConflictError("PropertyId", "This property is not available for sale.", enApiErrorCode.NotAvailable));
+                errors.Add(new ConflictError("property", "This property is not available for sale.", enApiErrorCode.NotAvailable));
             }
 
             return errors.Any() ? Result.Fail(errors) : Result.Ok();

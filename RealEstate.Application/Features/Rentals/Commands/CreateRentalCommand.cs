@@ -32,7 +32,7 @@ namespace RealEstate.Application.Features.Rentals.Commands
         private readonly IFileManager _fileManager;
         private readonly IRentalsRepository _RentalsRepository;
         private readonly IMapper _mapper;
-
+        private Guid _lessorId = Guid.Empty;
         public CreateRentalCommandHandler(
             IPropertyRepository propertyRepository,
             ICustomerRepository customerRepository, 
@@ -50,7 +50,7 @@ namespace RealEstate.Application.Features.Rentals.Commands
         public async Task<AppResponse<Guid>> Handle(CreateRentalCommand request, CancellationToken cancellationToken)
         {
 
-            var validationResults = _ValideteRentalData(request);
+            var validationResults = await _ValideteRentalData(request);
 
             if (validationResults.IsFailed)
             {
@@ -66,10 +66,10 @@ namespace RealEstate.Application.Features.Rentals.Commands
             var Rental = new Rental
             {
                 PropertyId = Guid.Parse(request.Data.PropertyId!),
-                LessorId = Guid.Parse(request.Data.LessorId!),
                 LesseeId = Guid.Parse(request.Data.LesseeId!),
+                LessorId = this._lessorId,
                 RentPriceMonth = request.Data.RentPrice,
-                StartDate = DateOnly.Parse(request.Data.StartDate!), 
+                StartDate = DateOnly.FromDateTime(request.Data.StartDate ?? DateTime.UtcNow),
                 Duration = (short)request.Data.Duration,
                 RentType = request.Data.RentType,
                 Description = request.Data.Description ?? "",
@@ -84,7 +84,7 @@ namespace RealEstate.Application.Features.Rentals.Commands
             try
             {
                 await _RentalsRepository.AddAsync(Rental); 
-                property.PropertyStatus = enPropertyStatus.Rented;
+                property.PropertyStatus = PropertyStatus.Rented;
                 await _RentalsRepository.SaveChangesAsync();
 
 
@@ -102,62 +102,45 @@ namespace RealEstate.Application.Features.Rentals.Commands
 
        
 
-        private Result _ValideteRentalData(CreateRentalCommand request)
+        private async Task<Result> _ValideteRentalData(CreateRentalCommand request)
         {
             List<Error> errors = new();
-            var isPropertyIdGuid = Guid.TryParse(request.Data.PropertyId, out var propertyId);
-            var isLessorIdGuid = Guid.TryParse(request.Data.LessorId, out var lessorId);
+            var isPropertyIdGuid = Guid.TryParse(request.Data.PropertyId, out var propertyId); 
             var isLesseeIdGuid = Guid.TryParse(request.Data.LesseeId, out var lesseeId);
-            var IsValidStartDate = DateOnly.TryParse(request.Data.StartDate, out var startDate);  
+       
 
-
-
-            if (!isPropertyIdGuid || !isLessorIdGuid || !isLesseeIdGuid || !IsValidStartDate  )
+            if (!isPropertyIdGuid ||  !isLesseeIdGuid    )
             {
                 if (!isPropertyIdGuid)
                     errors.Add(new ValidationError("propertyId", "Invalid GUID format", enApiErrorCode.InvalidGuid));
-                else if (!isLessorIdGuid)
-                    errors.Add(new ValidationError("LessorId", "Invalid GUID format", enApiErrorCode.InvalidGuid));
+                
                 else if (!isLesseeIdGuid)
                     errors.Add(new ValidationError("LesseeId", "Invalid GUID format", enApiErrorCode.InvalidGuid));
-                else if (!IsValidStartDate)
-                        errors.Add(new ValidationError("StartDate", "Invalid Start Date format", enApiErrorCode.InvalidDate)); 
-            
+             
             }
 
 
-            if (!_customerRepository.IsCustomerExists(Guid.Parse(request.Data.LesseeId!)))
-            {
-                errors.Add(new ValidationError("SellerId", $"Not Found Seller With Id {request.Data.LesseeId}", enApiErrorCode.CustomerNotFound));
-            }
-            if (!_customerRepository.IsCustomerExists(Guid.Parse(request.Data.LessorId!)))
-            {
-                errors.Add(new ValidationError("BuyerId", $"Not Found Buyer With Id {request.Data.LessorId}", enApiErrorCode.CustomerNotFound));
-            }
+       
 
             if (!_propertyRepository.IsPropertyExistsById(Guid.Parse(request.Data.PropertyId!)))
             {
                 errors.Add(new ValidationError("PropertyId", $"Not Found Property With Id {request.Data.PropertyId}", enApiErrorCode.PropertyNotFound));
             }
 
-
-            if (request.Data.LessorId == request.Data.LesseeId)
-            {
-                errors.Add(new ConflictError("LessorId", "Lessor and Lessee cannot be the same person.", enApiErrorCode.sssssssssssssss));
-            }
-
-
-
-            if (_propertyRepository.GetPropertyOwnerId(propertyId) != lessorId)
-            {
-                errors.Add(new ConflictError("LessorId", "Lessor is not the actual owner of the property.", enApiErrorCode.SellerNotOwner));
-            }
-
-            if (!_propertyRepository.IsPropertyAvailable(propertyId))
+            var property = await _propertyRepository.GetByIdAsync(Guid.Parse(request.Data.PropertyId!));
+            if (property == null)
             {
                 errors.Add(new ConflictError("PropertyId", "This property is not available for Rental.", enApiErrorCode.NotAvailable));
+            } else
+            {
+                this._lessorId = property.OwnerId;
             }
 
+
+            if (!_customerRepository.IsCustomerExists(Guid.Parse(request.Data.LesseeId!)))
+            {
+                errors.Add(new ValidationError("LesseeId", $"Not Found Seller With Id {request.Data.LesseeId}", enApiErrorCode.CustomerNotFound));
+            }
             return errors.Any() ? Result.Fail(errors) : Result.Ok();
         }
 

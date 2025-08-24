@@ -78,9 +78,11 @@ public enum enApiErrorCode {
     RequiredField = 5001,               
     InvalidFormat = 5002,               
     MinimumLengthViolated = 5003,       
-    MaximumLengthExceeded = 5004,       
-    PasswordMismatch = 5005,            
-    InvalidDate = 5006,          
+    MaximumLengthExceeded = 5004,
+    MinimumAgeViolated = 5005,
+    MaximumAgeViolated = 5006,
+    PasswordMismatch = 5007,            
+    InvalidDate = 5008,          
 
 
 

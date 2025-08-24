@@ -48,10 +48,15 @@ namespace RealEstate.Application.Features.Categories.Querys
                 request.Pagination.PageNumber,
                 request.Pagination.PageSize,
                 filter,
+                includes : c => c.Properties,
                 orderBy : q => q.OrderBy(category => category.CategoryName)
             );
 
-            var categoriesDTO = categories.Select(category => new CategoryDTO { CategoryId = category.Id.ToString(), CategoryName = category.CategoryName }).ToList();
+            var categoriesDTO = categories.Select(category => new CategoryDTO { 
+                CategoryId = category.Id.ToString(),
+                CategoryName = category.CategoryName ,
+                PropertiesCount = category.Properties.Count.ToString()
+            }).ToList();
 
             var totalCount = await _categoryRepository.CountAsync();
 

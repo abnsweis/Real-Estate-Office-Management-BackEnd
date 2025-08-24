@@ -10,7 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-
+using RealEstate.Domain.Entities;
 namespace RealEstate.Application.Features.Customers.Querys
 {
     public class GetTopLatestCustomersQuery : IRequest<List<CustomerDTO>>
@@ -44,17 +44,23 @@ namespace RealEstate.Application.Features.Customers.Querys
                 pageSize: request.Count,
                 filter: filter,
                 orderBy: q => q.OrderByDescending(c => c.CreatedDate),
-                includes: c => c.Person
-            );
-             
-            var dtoList = _mapper.Map<List<CustomerDTO>>(latestCustomers);
+                  includes: new Expression<Func<Customer, object>>[]
+               {
+                   c => c.Person,
+                   c => c.Properties,
+               });
 
-            foreach (var item in dtoList)
+            var customers = _mapper.Map<List<CustomerDTO>>(latestCustomers);
+
+            foreach (var customer in customers)
             {
-                item.ImageURL = _fileManager.GetPublicURL(item.ImageURL);
+                customer.ImageURL = _fileManager.GetPublicURL(customer.ImageURL);
+                customer.isBuyer = await _customerRepository.CustomerIsBuyer(Guid.Parse(customer.CustomerId));
+                customer.isOwner = await _customerRepository.CustomerIsOwner(Guid.Parse(customer.CustomerId));
+                customer.IsRenter = await _customerRepository.CustomerIsRenter(Guid.Parse(customer.CustomerId));
             }
 
-            return dtoList;
+            return customers;
         }
     }
 }

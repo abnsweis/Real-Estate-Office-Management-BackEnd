@@ -11,6 +11,8 @@ namespace RealEstate.Application.Common.Interfaces.RepositoriosInterfaces
         Task<List<Property>> GetLatestTop7Properties(params Expression<Func<Property, object>>[]? includes);
         Task<bool> IsPropertyyExistsByPropertyNumber(string propertyNumber);
         bool IsPropertyExistsById(Guid propertyId);
+        Task<int> GetAvailablePropertiesCountAsync();
+        Task<int> GetSoldPropertiesCountAsync(CancellationToken cancellationToken = default);
 
         Guid GetPropertyOwnerId(Guid propertyId);
         bool IsPropertyAvailable(Guid propertyId);

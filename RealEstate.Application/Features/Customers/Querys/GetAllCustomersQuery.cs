@@ -2,8 +2,10 @@
 using MediatR;
 using RealEstate.Application.Common.Interfaces;
 using RealEstate.Application.Common.Interfaces.RepositoriosInterfaces;
+using RealEstate.Application.Common.Interfaces.Services;
 using RealEstate.Application.Common.Pagination;
 using RealEstate.Application.Dtos.CustomerDTO;
+using RealEstate.Application.Dtos.Interfaces;
 using RealEstate.Application.Dtos.Users;
 using RealEstate.Domain.Entities;
 using System;
@@ -32,11 +34,13 @@ namespace RealEstate.Application.Features.Customers.Querys
     public class GetAllCustomersQueryHandler : IRequestHandler<GetAllCustomersQuery, PaginationResponse<CustomerDTO>>
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IFileManager _fileManager;
         private readonly IMapper _mapper;
 
-        public GetAllCustomersQueryHandler(ICustomerRepository customerRepository, IMapper mapper)
+        public GetAllCustomersQueryHandler(ICustomerRepository customerRepository, IFileManager fileManager, IMapper mapper)
         {
             _customerRepository = customerRepository;
+            this._fileManager = fileManager;
             _mapper = mapper;
         }
 
@@ -51,13 +55,33 @@ namespace RealEstate.Application.Features.Customers.Querys
 
                 && Customer.IsDeleted == false;
 
-            var Customers = await _customerRepository.GetAllAsync(request.pagination.PageNumber, request.pagination.PageSize, filter, includes: c => c.Person);
+            var Customers = await _customerRepository.GetAllAsync(
+                request.pagination.PageNumber, 
+                request.pagination.PageSize, filter, 
+                includes: new Expression<Func<Customer, object>>[]
+                {
+                    c => c.Person, 
+                    c => c.Properties,
+                } );
 
             var totalCount = await _customerRepository.CountAsync();
 
+
+
+            var customers = _mapper.Map<List<CustomerDTO>>(Customers);
+
+            foreach (var C in customers)
+            {
+                var ContractsCount = await _customerRepository.GetCustomerContractsCount(Guid.Parse(C.CustomerId));
+                C.ImageURL = _fileManager.GetPublicURL(C.ImageURL);
+                C.ContractsCount = ContractsCount.ToString();
+                C.isBuyer = await _customerRepository.CustomerIsBuyer(Guid.Parse(C.CustomerId));
+                C.isOwner = await _customerRepository.CustomerIsOwner(Guid.Parse(C.CustomerId));
+                C.IsRenter = await _customerRepository.CustomerIsRenter(Guid.Parse(C.CustomerId));
+            }
             var response = new PaginationResponse<CustomerDTO>
             {
-                Items = _mapper.Map<List<CustomerDTO>>(Customers),
+                Items = customers,
                 PageNumber = request.pagination.PageNumber,
                 PageSize = request.pagination.PageSize,
                 TotalCount = totalCount

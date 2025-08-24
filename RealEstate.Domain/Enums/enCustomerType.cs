@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RealEstate.Domain.Enums;
-public enum enCustomerType
+public enum CustomerType
 {
     Owner ,
     Buyer ,

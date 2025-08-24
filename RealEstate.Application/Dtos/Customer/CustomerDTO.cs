@@ -22,5 +22,11 @@ namespace RealEstate.Application.Dtos.CustomerDTO
 
         public string customerType { get; set; } 
         public string ImageURL { get; set; } 
+        public string PropertiesCount { get; set; } 
+        public string ContractsCount { get; set; } 
+        public string JoiningDate { get; set; } 
+        public bool isOwner { get; set; } 
+        public bool isBuyer { get; set; } 
+        public bool IsRenter { get; set; } 
     }
 }

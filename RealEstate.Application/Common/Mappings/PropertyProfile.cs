@@ -16,7 +16,7 @@ namespace RealEstate.Application.Common.Mappings
                 .ForMember(dest => dest.CategoryId , opt => opt.MapFrom(src => src.CategoryId.ToString()))
                 .ForMember(dest => dest.PropertyNumber , opt => opt.MapFrom(src => src.PropertyNumber.ToString()))
                 .ForMember(dest => dest.MainImage , opt => opt.MapFrom(src => GetMainPropertyImage(src)))
-                .ForMember(dest => dest.PropertyStatus , opt => opt.MapFrom(src => src.PropertyStatus.ToString()))
+                .ForMember(dest => dest.PropertyStatus , opt => opt.MapFrom(src => (int)src.PropertyStatus))
                 .ForPath(dest => dest.CategoryName , opt => opt.MapFrom(src => src.Category.CategoryName)) 
                 .ForPath(dest => dest.OwnerFullName , opt => opt.MapFrom(src => src.Owner.Person.FullName))
                 .ForPath(dest => dest.OwnerNationalId , opt => opt.MapFrom(src => src.Owner.Person.NationalId))

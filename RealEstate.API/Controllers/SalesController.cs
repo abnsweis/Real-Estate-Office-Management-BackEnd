@@ -94,5 +94,16 @@ namespace RealEstate.API.Controllers
                 new { SaleId = response.Data });
         }
 
+        // GET: api/sales/statistics
+        [HttpGet("statistics")]
+        public async Task<IActionResult> GetSalesStatistics()
+        {
+            var response = await _mediator.Send(new GetSalesStatisticsQuery());
+             
+            if (response.Result.IsFailed)
+                return response.Result.ToActionResult();
+             
+            return Ok(response.Data);
+        }
     }
 }

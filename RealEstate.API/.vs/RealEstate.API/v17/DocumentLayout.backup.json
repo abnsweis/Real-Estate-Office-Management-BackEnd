@@ -3,11 +3,49 @@
   "WorkspaceRootPath": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\controllers\\propertiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:controllers\\propertiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\common\\services\\filemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\properties\\querys\\get\\getpropertiescountquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\dtos\\sales\\createsaledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\sales\\commands\\createsalecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAE38E5-158B-4B44-B051-6B6DC1E56200}|..\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.infrastructure\\data\\seeddata\\seedingdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\dtos\\sales\\saledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\dtos\\sales\\salesstatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAE38E5-158B-4B44-B051-6B6DC1E56200}|..\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\features\\sales\\querys\\getsalesstatisticsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAE38E5-158B-4B44-B051-6B6DC1E56200}|..\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.infrastructure\\repositorios\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAE38E5-158B-4B44-B051-6B6DC1E56200}|..\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.infrastructure\\repositorios\\propertyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.api\\controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F76BDD-F095-4C1B-A1AE-B13DAE4EB27D}|RealEstate.API.csproj|solutionrelative:controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96BF0E98-DF31-4BCC-9660-336747785B89}|..\\RealEstate.Application\\RealEstate.Application.csproj|c:\\users\\windows_os\\desktop\\realestate\\realestate.application\\dtos\\statistics\\monthlysalesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,7 +54,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 990,
+          "DockedWidth": 290,
           "SelectedChildIndex": 8,
           "Children": [
             {
@@ -54,28 +92,171 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PropertiesController.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\PropertiesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PropertiesController.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\PropertiesController.cs",
-              "RelativeToolTip": "Controllers\\PropertiesController.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAuwK4AAAAvAAAAAAAAAA==",
+              "Title": "FileManager.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Common\\Services\\FileManager.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Common\\Services\\FileManager.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Common\\Services\\FileManager.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Common\\Services\\FileManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T19:50:17.314Z",
+              "WhenOpened": "2025-08-21T20:42:03.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetPropertiesCountQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
-              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
-              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
-              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Properties\\Querys\\Get\\GetPropertiesCountQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "SaleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Sales\\SaleDTO.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Dtos\\Sales\\SaleDTO.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Sales\\SaleDTO.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Dtos\\Sales\\SaleDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T19:46:30.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T11:55:13.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SalesStatisticsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Sales\\SalesStatisticsDto.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Dtos\\Sales\\SalesStatisticsDto.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Sales\\SalesStatisticsDto.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Dtos\\Sales\\SalesStatisticsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:55:12.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateSaleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Sales\\CreateSaleDTO.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Dtos\\Sales\\CreateSaleDTO.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Sales\\CreateSaleDTO.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Dtos\\Sales\\CreateSaleDTO.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:55:11.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T10:59:06.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SeedingData.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
+              "RelativeToolTip": "..\\RealEstate.Infrastructure\\Data\\SeedData\\SeedingData.cs",
+              "ViewState": "AgIAAOoBAAAAAAAAAAAkwOkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T10:58:14.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "..\\RealEstate.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAADcBAAAAAAAAAAAAAEEBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T10:57:56.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SalesController.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\SalesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SalesController.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\SalesController.cs",
+              "RelativeToolTip": "Controllers\\SalesController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAA4wGQAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T09:37:34.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PropertyRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Repositorios\\PropertyRepository.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Infrastructure\\Repositorios\\PropertyRepository.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Repositorios\\PropertyRepository.cs",
+              "RelativeToolTip": "..\\RealEstate.Infrastructure\\Repositorios\\PropertyRepository.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAlwDYAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T09:33:31.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateSaleCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Sales\\Commands\\CreateSaleCommand.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Sales\\Commands\\CreateSaleCommand.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Sales\\Commands\\CreateSaleCommand.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Sales\\Commands\\CreateSaleCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T09:14:22.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetSalesStatisticsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Sales\\Querys\\GetSalesStatisticsQuery.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Features\\Sales\\Querys\\GetSalesStatisticsQuery.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Features\\Sales\\Querys\\GetSalesStatisticsQuery.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Features\\Sales\\Querys\\GetSalesStatisticsQuery.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwCYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T09:24:22.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MonthlySalesDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Statistics\\MonthlySalesDTO.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Application\\Dtos\\Statistics\\MonthlySalesDTO.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Application\\Dtos\\Statistics\\MonthlySalesDTO.cs",
+              "RelativeToolTip": "..\\RealEstate.Application\\Dtos\\Statistics\\MonthlySalesDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:40:03.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SalesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Repositorios\\SalesRepository.cs",
+              "RelativeDocumentMoniker": "..\\RealEstate.Infrastructure\\Repositorios\\SalesRepository.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.Infrastructure\\Repositorios\\SalesRepository.cs",
+              "RelativeToolTip": "..\\RealEstate.Infrastructure\\Repositorios\\SalesRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAqwFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:42:15.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StatisticsController.cs",
+              "DocumentMoniker": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\StatisticsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StatisticsController.cs",
+              "ToolTip": "C:\\Users\\Windows_OS\\Desktop\\RealEstate\\RealEstate.API\\Controllers\\StatisticsController.cs",
+              "RelativeToolTip": "Controllers\\StatisticsController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAzwD8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:30:09.11Z"
             }
           ]
         }

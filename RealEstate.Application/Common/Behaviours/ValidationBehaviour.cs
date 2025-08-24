@@ -64,7 +64,7 @@ namespace RealEstate.Application.Common.Behaviours
                     } else if (typeof(TResponse) == typeof(AppResponse))
                     {
                         var failedAppResponse = AppResponse.Fail(errors);
-                        return (TResponse)(object)failedAppResponse; // لازم تحويل نوع (cast) قوي
+                        return (TResponse)(object)failedAppResponse;  
                     }
                 }
             }

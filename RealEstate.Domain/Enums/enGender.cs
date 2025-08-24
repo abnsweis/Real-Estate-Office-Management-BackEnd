@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate.Domain.Enums;
 
-public enum enGender
+public enum Gender
 {
     Male,
     Female

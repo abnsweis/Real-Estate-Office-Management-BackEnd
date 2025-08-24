@@ -9,7 +9,7 @@ public partial class Customer : BaseAuditableEntity
     public virtual Person Person { get; set; } = null!;
     public string PhoneNumber { get; set; } = null!;
 
-    public enCustomerType CustomerType { get; set; } 
+    public CustomerType CustomerType { get; set; } 
     public virtual ICollection<Property> Properties { get; set; } = new List<Property>();
 
     public virtual ICollection<Rental> RentalLessees { get; set; } = new List<Rental>();

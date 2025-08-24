@@ -40,14 +40,14 @@ namespace RealEstate.Infrastructure.Data.SeedData
             Person person1 = new Person { 
                 FullName = "ابراهيم الصويص",
                 DateOfBirth = DateOnly.FromDateTime(new DateTime(2003, 3, 1)),
-                Gender = enGender.Male,
+                Gender = Gender.Male,
                 ImageURL = result1.Value,
             };
             Person person2 = new Person
             {
                 FullName = "محمد الصويص",
                 DateOfBirth = DateOnly.FromDateTime(new DateTime(2003, 3, 1)),
-                Gender = enGender.Male,
+                Gender = Gender.Male,
                 ImageURL = result2.Value,
             };
 
@@ -132,7 +132,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                 var customer1 = new Customer
                 {
                     PersonId = person1.Id,
-                    CustomerType = enCustomerType.Buyer,
+                    CustomerType = CustomerType.Buyer,
                     PhoneNumber = "+905375699970",
                      
                 };
@@ -145,7 +145,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                 var customer2 = new Customer
                 {
                     PersonId = person2.Id,
-                    CustomerType = enCustomerType.Owner,
+                    CustomerType = CustomerType.Owner,
                     PhoneNumber = "+905375699971"
                 };
 
@@ -195,7 +195,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                     Price = 100m,
                     Location = "دمشق - المزة",
                     Address = "شارع المزة 10",
-                    PropertyStatus = enPropertyStatus.Available,
+                    PropertyStatus = PropertyStatus.Available,
                     Area = 120.5m,
                     VideoUrl = null,
                     Description = "شقة حديثة مع إطلالة جميلة ومساحة واسعة"
@@ -209,7 +209,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                     Price = 55,
                     Location = "حلب - الريف الغربي",
                     Address = "قرية الكفر",
-                    PropertyStatus = enPropertyStatus.Sold,
+                    PropertyStatus = PropertyStatus.Sold,
                     Area = 200.0m,
                     VideoUrl = null,
                     Description = "منزل ريفي مريح، تحيط به الطبيعة، مناسب للعائلات"
@@ -222,7 +222,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                     Price = 100m,
                     Location = "دمشق - المزة",
                     Address = "شارع المزة 10",
-                    PropertyStatus = enPropertyStatus.Available,
+                    PropertyStatus = PropertyStatus.Available,
                     Area = 120.5m,
                     VideoUrl = null,
                     Description = "شقة حديثة مع إطلالة جميلة ومساحة واسعة"
@@ -236,7 +236,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                     Price = 55,
                     Location = "حلب - الريف الغربي",
                     Address = "قرية الكفر",
-                    PropertyStatus = enPropertyStatus.Sold,
+                    PropertyStatus = PropertyStatus.Sold,
                     Area = 200.0m,
                     VideoUrl = null,
                     Description = "منزل ريفي مريح، تحيط به الطبيعة، مناسب للعائلات"
@@ -250,7 +250,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                     Price = 100m,
                     Location = "دمشق - المزة",
                     Address = "شارع المزة 10",
-                    PropertyStatus = enPropertyStatus.Available,
+                    PropertyStatus = PropertyStatus.Available,
                     Area = 120.5m,
                     VideoUrl = null,
                     Description = "شقة حديثة مع إطلالة جميلة ومساحة واسعة"
@@ -264,7 +264,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                     Price = 55,
                     Location = "حلب - الريف الغربي",
                     Address = "قرية الكفر",
-                    PropertyStatus = enPropertyStatus.Sold,
+                    PropertyStatus = PropertyStatus.Sold,
                     Area = 200.0m,
                     VideoUrl = null,
                     Description = "منزل ريفي مريح، تحيط به الطبيعة، مناسب للعائلات"
@@ -278,7 +278,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                     Price = 200,
                     Location = "حلب - شارع الحضارة",
                     Address = "مقابل البنك المركزي",
-                    PropertyStatus = enPropertyStatus.Rented,
+                    PropertyStatus = PropertyStatus.Rented,
                     Area = 80.0m,
                     VideoUrl = null,
                     Description = "محل تجاري بموقع حيوي، مناسب لجميع أنواع الأعمال"
@@ -457,7 +457,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                 RentPriceMonth = 1500.00m,
                 StartDate = DateOnly.FromDateTime(DateTime.UtcNow), 
                 Duration = 3,
-                RentType = enRentType.Monthly,
+                RentType = RentType.Monthly,
                 Description = "عقد إيجار سنوي لعقار مميز",
                 ContractImageUrl = "/Uploads/Contracts/sample-rental-contract.jpg"
             };
@@ -471,7 +471,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
 
             var seller = _context.Customers.FirstOrDefault();  
             var buyer = _context.Customers.Skip(1).FirstOrDefault(); 
-            var property = _context.Properties.FirstOrDefault( p => p.PropertyStatus == enPropertyStatus.Sold);
+            var property = _context.Properties.FirstOrDefault( p => p.PropertyStatus == PropertyStatus.Sold);
             var result =  _fileManager.SetDefaultContractImage();
             if (seller == null || buyer == null || property == null) return;
 
@@ -486,6 +486,7 @@ namespace RealEstate.Infrastructure.Data.SeedData
                 Description = "بيع عقار سكني في موقع ممتاز",
                 ContractImageUrl =  result.Value 
             };
+
 
             _context.Sales.Add(sale);
             await _context.SaveChangesAsync();

@@ -32,6 +32,18 @@ namespace RealEstate.API.Controllers
 
             return Ok(response.Data);
         }
+
+        [HttpGet("monthly-sales/by-month")]
+        public async Task<IActionResult> GetSalesByMonth([FromQuery] int year, [FromQuery] int month)
+        {
+            var response = await _mediator.Send(new GetSalesByMonthQuery(year, month));
+
+            if (response.Result.IsFailed)
+                return response.Result.ToActionResult();
+
+            return Ok(response.Data);
+        }
+
         [HttpGet("monthly-rentals")]
         public async Task<IActionResult> GetMonthlyRentalsByYear([FromQuery] int year)
         {

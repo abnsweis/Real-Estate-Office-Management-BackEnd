@@ -19,7 +19,7 @@ public partial class Rental : BaseAuditableEntity
     public string Description { get; set; } = null!;
 
     public string ContractImageUrl { get; set; } = null!;
-    public enRentType RentType { get; set; }  = enRentType.Monthly;
+    public RentType RentType { get; set; }  = RentType.Monthly;
     public short Duration { get; set; }
     public virtual Customer Lessee { get; set; } = null!;
 
@@ -29,14 +29,14 @@ public partial class Rental : BaseAuditableEntity
 
     public decimal GetTotalPrice()
     {
-        int totalMonths = RentType == enRentType.Yearly ? Duration * 12 : Duration; 
+        int totalMonths = RentType == RentType.Yearly ? Duration * 12 : Duration; 
 
         return totalMonths * RentPriceMonth;
     }
     
     public DateOnly GetEndDate()
     {
-        return RentType == enRentType.Monthly ? this.StartDate.AddMonths(Duration) : this.StartDate.AddYears(Duration);
+        return RentType == RentType.Monthly ? this.StartDate.AddMonths(Duration) : this.StartDate.AddYears(Duration);
     }
 
 }

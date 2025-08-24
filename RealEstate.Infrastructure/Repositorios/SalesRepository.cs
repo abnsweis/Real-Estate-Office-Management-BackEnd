@@ -48,6 +48,7 @@ namespace RealEstate.Infrastructure.Repositorios
                     sale => sale.Month,
                     (month, salesGroup) => new MonthlyFinancialSummaryDTO
                     {
+                        Year = year.ToString(),
                         Month = month,
                         MonthName = new System.Globalization.CultureInfo("ar-SY").DateTimeFormat.GetMonthName(month),
                         Total = salesGroup.FirstOrDefault()?.TotalSales ?? 0
@@ -55,6 +56,21 @@ namespace RealEstate.Infrastructure.Repositorios
                 .ToList();
 
             return result;
+        }
+
+        public async Task<MonthlyFinancialSummaryDTO> GetSalesByMonthAsync(int year, int month)
+        {
+            var salesInMonth = await _context.Sales
+                .Where(s => s.SaleDate.Year == year && s.SaleDate.Month == month)
+                .ToListAsync();
+
+            return new MonthlyFinancialSummaryDTO
+            {
+                Year = year.ToString(),
+                Month = month,
+                MonthName = new System.Globalization.CultureInfo("ar-SY").DateTimeFormat.GetMonthName(month),
+                Total = salesInMonth.Sum(s => s.Price)
+            };
         }
 
         public decimal GetTotalSalesRevenue()

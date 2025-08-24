@@ -33,7 +33,10 @@ namespace RealEstate.Application.Features.Categories.Querys
         }
         public async Task<AppResponse<CategoryDTO>> Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
         {
-            var category = await _categoryRepository.FirstOrDefaultAsync(filter: category => category.Id == request.CategoryId && !category.IsDeleted);
+            var category = await _categoryRepository.FirstOrDefaultAsync(
+                filter: category => category.Id == request.CategoryId && !category.IsDeleted,
+                includes : c => c.Properties
+            );
 
             if (category is null)
             {
@@ -46,7 +49,8 @@ namespace RealEstate.Application.Features.Categories.Querys
             return AppResponse<CategoryDTO>.Success(
                 new CategoryDTO { 
                     CategoryId = category.Id.ToString(),
-                    CategoryName = category.CategoryName
+                    CategoryName = category.CategoryName,
+                    PropertiesCount = category.Properties.Count.ToString()
                 }
             );
         }

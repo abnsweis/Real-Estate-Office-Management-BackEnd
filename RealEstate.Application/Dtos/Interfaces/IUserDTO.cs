@@ -13,7 +13,7 @@ namespace RealEstate.Application.Dtos.Interfaces
         string fullName   { get; }  
         IFormFile? imageURL  { get; }  
         string phoneNumber  { get; }  
-        enGender gender  { get; }  
+        Gender gender  { get; }  
         DateOnly? dateOfBirth  { get; }  
         string email  { get; }  
         string username  { get; }  

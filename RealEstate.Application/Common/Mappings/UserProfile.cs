@@ -40,7 +40,7 @@ namespace RealEstate.Application.Common.Mappings
                         person.FullName = src.FullName;
                         person.NationalId = src.NationalID;
                         person.DateOfBirth = string.IsNullOrEmpty(src.DateOfBirth) ? default : DateOnly.Parse(src.DateOfBirth);  
-                        person.Gender = string.IsNullOrEmpty(src.Gender) ? default : (enGender)Enum.Parse(typeof(enGender), src.Gender);  
+                        person.Gender = string.IsNullOrEmpty(src.Gender) ? default : (Gender)Enum.Parse(typeof(Gender), src.Gender);  
                         person.ImageURL = src.ImageUrl; 
                         return person;
                     }));

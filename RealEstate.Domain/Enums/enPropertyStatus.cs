@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RealEstate.Domain.Enums;
-public enum enPropertyStatus
+public enum PropertyStatus
 {
     Available = 0,
     Rented = 1,

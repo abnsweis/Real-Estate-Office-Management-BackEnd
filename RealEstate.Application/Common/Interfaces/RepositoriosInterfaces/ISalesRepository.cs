@@ -10,6 +10,8 @@ namespace RealEstate.Application.Common.Interfaces.RepositoriosInterfaces
         bool IsSaleExistsById(Guid SaleId);
         decimal GetMonthlySales(int? month = null);
         decimal GetTotalSalesRevenue();
+        Task<MonthlyFinancialSummaryDTO> GetSalesByMonthAsync(int year, int month);
+
         Task<List<MonthlyFinancialSummaryDTO>> GetMonthlySalesByYearAsync(int year);
     }
 }   

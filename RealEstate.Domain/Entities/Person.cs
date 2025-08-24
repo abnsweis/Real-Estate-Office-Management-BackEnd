@@ -18,7 +18,7 @@ namespace RealEstate.Domain.Entities
 
         public DateOnly DateOfBirth { get; set; }
 
-        public enGender Gender { get; set; } = enGender.Male;
+        public Gender Gender { get; set; } = Gender.Male;
 
         public string ImageURL { get; set; } = null!;
 

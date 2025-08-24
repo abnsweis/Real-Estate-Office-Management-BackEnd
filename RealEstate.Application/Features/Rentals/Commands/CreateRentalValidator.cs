@@ -13,16 +13,7 @@ namespace RealEstate.Application.Features.Rentals.Commands
     {
 
         public CreateRentalValidator()
-        {
-
-            RuleFor(r => r.Data.LessorId)
-                .NotEmpty()
-                    .WithMessage("Lessor Id is Required")
-                    .WithErrorCode(enApiErrorCode.RequiredField.ToString())
-                .Must(r => Utils.isGuid(r))
-                    .WithMessage("Invalid GUID format")
-                    .WithErrorCode(enApiErrorCode.InvalidGuid.ToString())
-                    .OverridePropertyName("LessorId");
+        { 
 
             RuleFor(r => r.Data.LesseeId)
                 .NotEmpty()
@@ -54,8 +45,9 @@ namespace RealEstate.Application.Features.Rentals.Commands
                 .NotEmpty()
                     .WithMessage("Start Date is required.")
                     .WithErrorCode(enApiErrorCode.RequiredField.ToString())
-                .Must(s => DateOnly.TryParse(s, out _))
-                    .WithMessage("Invalid start date format.")
+                    .Must(dt => dt.HasValue && dt.Value >= DateTime.Today)
+                        .WithMessage("Start date must be today or later.")
+
                     .WithErrorCode(enApiErrorCode.InvalidDate.ToString())
                     .OverridePropertyName("StartDate");
 

@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RealEstate.Application.Common.Pagination;
+using RealEstate.Application.Dtos.Customer;
 using RealEstate.Application.Dtos.CustomerDTO;
 using RealEstate.Application.Features.Customers.Commands.Create;
 using RealEstate.Application.Features.Customers.Commands.Delete;
@@ -62,7 +63,7 @@ namespace RealEstate.API.Controllers
         [HttpGet("Buyers")]
         public async Task<IActionResult> GetBuyers([FromQuery] PaginationRequest pagination)
         {
-            var customers = await _mediator.Send(new GetAllCustomersQuery(pagination, new FiltterCustomersDTO { customerType = enCustomerType.Buyer.ToString()}));
+            var customers = await _mediator.Send(new GetAllCustomersQuery(pagination, new FiltterCustomersDTO { customerType = CustomerType.Buyer.ToString()}));
             return Ok(customers);
         }
 
@@ -75,7 +76,7 @@ namespace RealEstate.API.Controllers
         [HttpGet("Renters")]
         public async Task<IActionResult> GetRenters([FromQuery] PaginationRequest pagination)
         {
-            var customers = await _mediator.Send(new GetAllCustomersQuery(pagination, new FiltterCustomersDTO { customerType = enCustomerType.Renter.ToString()}));
+            var customers = await _mediator.Send(new GetAllCustomersQuery(pagination, new FiltterCustomersDTO { customerType = CustomerType.Renter.ToString()}));
             return Ok(customers);
         }
 
@@ -88,7 +89,7 @@ namespace RealEstate.API.Controllers
         [HttpGet("Owners")]
         public async Task<IActionResult> GetOwners([FromQuery] PaginationRequest pagination)
         {
-            var customers = await _mediator.Send(new GetAllCustomersQuery(pagination, new FiltterCustomersDTO { customerType = enCustomerType.Owner.ToString() }));
+            var customers = await _mediator.Send(new GetAllCustomersQuery(pagination, new FiltterCustomersDTO { customerType = CustomerType.Owner.ToString() }));
             return Ok(customers);
         }
 
@@ -120,10 +121,16 @@ namespace RealEstate.API.Controllers
         [HttpGet("NationalId/{NationalId}")]
         public async Task<IActionResult> GetCustomerByNationalId(string NationalId)
         {
-            var results = await _mediator.Send(new GetCustomerByNationalIdQuery(NationalId));
-            return results.ToActionResult();
+            var response = await _mediator.Send(new GetCustomerByNationalIdQuery(NationalId));
+            return response.Result.IsFailed ? response.Result.ToActionResult() : Ok(response.Data);
         }
 
+        [HttpGet("transactions/{customerId}")]
+        public async Task<IActionResult> GetCustomerTransactions(Guid customerId)
+        {
+            var response = await _mediator.Send(new GetCustomerTransactionsQuery(customerId));
+            return response.Result.IsFailed ? response.Result.ToActionResult() : Ok(response.Data);
+        }
 
         /// <summary>
         /// Check if a customer exists with the given national ID
@@ -145,9 +152,9 @@ namespace RealEstate.API.Controllers
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>The ID of the newly created customer</returns>
         [HttpPost]
-        public async Task<ActionResult<Guid>> CreateCustomer([FromBody] CreateCustomerCommand command, CancellationToken cancellationToken)
+        public async Task<ActionResult<Guid>> CreateCustomer([FromForm] CreateCustomerDTO customer )
         {
-            var response = await _mediator.Send(command);
+            var response = await _mediator.Send(new CreateCustomerCommand(customer));
 
             if (response.Result.IsFailed)
             {
@@ -168,9 +175,11 @@ namespace RealEstate.API.Controllers
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>No content if successful</returns>
         [HttpPut("{customerId}")]
-        public async Task<ActionResult<Guid>> UpdateCustomer([FromRoute] Guid customerId, [FromForm] UpdateCustomerCommand command, CancellationToken cancellationToken)
+        public async Task<ActionResult<Guid>> UpdateCustomer([FromRoute] Guid customerId, [FromForm] UpdateCustomerDTO customer , CancellationToken cancellationToken)
         {
-            var response = await _mediator.Send(command with { CustomerId = customerId });
+            customer.setCustomerId(customerId);
+
+            var response = await _mediator.Send(new UpdateCustomerCommand(customer));
 
             if (response.Result.IsFailed)
             {

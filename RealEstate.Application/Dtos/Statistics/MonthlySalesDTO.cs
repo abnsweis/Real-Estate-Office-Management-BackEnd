@@ -8,6 +8,7 @@ namespace RealEstate.Application.Dtos.Statistics
 {
     public class MonthlyFinancialSummaryDTO
     {
+        public string? Year { get; set; }
         public int  Month { get; set; }
         public string? MonthName { get; set; }
         public decimal? Total { get; set; } 

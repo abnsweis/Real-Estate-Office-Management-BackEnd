@@ -52,7 +52,7 @@ namespace RealEstate.Application.Features.Properties.Querys.Filter
         {
 
 
-            if (!Enum.TryParse(request.Status, true, out enPropertyStatus status))
+            if (!Enum.TryParse(request.Status, true, out PropertyStatus status))
             {
                 var error = new ValidationError("PropertiesStatus", "Invlaid Properties Status Value", enApiErrorCode.InvalidEnumValue);
                 return AppResponse<PaginationResponse<PropertyDTO>>.Fail(error);

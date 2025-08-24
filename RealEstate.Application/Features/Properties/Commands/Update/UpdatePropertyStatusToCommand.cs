@@ -47,7 +47,7 @@ namespace RealEstate.Application.Features.Customers.Commands.Update
 
  
 
-            if (!Enum.TryParse<enPropertyStatus>(request.Status,out var enStatus))
+            if (!Enum.TryParse<PropertyStatus>(request.Status,out var enStatus))
             {
                 var error = new ValidationError("PropertiesStatus", $"Invlaid Properties Status Value {request.Status}", enApiErrorCode.InvalidEnumValue);
                 return AppResponse.Fail(error);

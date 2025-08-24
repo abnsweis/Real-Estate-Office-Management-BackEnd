@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using RealEstate.API;
+using RealEstate.API.Hubs;
 using RealEstate.API.Transformers;
 using RealEstate.Application;
 using RealEstate.Application.Common;
@@ -28,8 +29,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddWeb(builder.Configuration);
-builder.Services.AddApplication(builder.Configuration); 
+builder.Services.AddApplication(builder.Configuration);
 
+
+builder.Services.AddSignalR();   
 
 builder.Services.AddSingleton<CustomAspNetCoreResultEndpointProfile>();
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -87,8 +90,10 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("http://localhost:4200")
                 .AllowAnyHeader()
-                .AllowAnyMethod();
+                .AllowAnyMethod()
+                .AllowCredentials();
         }); 
+
 });
 
 var app = builder.Build();
@@ -106,10 +111,10 @@ if (app.Environment.IsDevelopment())
 }
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors(MyAllowSpecificOrigins); 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseCors(MyAllowSpecificOrigins); 
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
@@ -129,5 +134,7 @@ using (var scope = app.Services.CreateScope())
 
 }
 
+
+app.MapHub<NotificationHub>("notification-hub");
 app.Run();
  

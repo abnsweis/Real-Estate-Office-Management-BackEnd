@@ -397,9 +397,34 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "command",
-        "Type": "RealEstate.Application.Features.Customers.Commands.Create.CreateCustomerCommand",
-        "IsRequired": true
+        "Name": "fullName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "phoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "nationalId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "gender",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "customerType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dateOfBirth",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -428,17 +453,7 @@
         "IsRequired": true
       },
       {
-        "Name": "CustomerId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
         "Name": "fullName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "nationalId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -448,7 +463,7 @@
         "IsRequired": false
       },
       {
-        "Name": "dateOfBirth",
+        "Name": "nationalId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -459,6 +474,11 @@
       },
       {
         "Name": "customerType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dateOfBirth",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -624,6 +644,22 @@
         "Name": "PageNumber",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.CustomersController",
+    "Method": "GetCustomerTransactions",
+    "RelativePath": "api/Customers/transactions/{customerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Guid",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -880,6 +916,35 @@
   },
   {
     "ContainingType": "PropertiesController",
+    "Method": "GetPropertiesCount",
+    "RelativePath": "api/Properties/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "PropertiesController",
     "Method": "DeleteProperty",
     "RelativePath": "api/Properties/Delete/Id/{propertyId}",
     "HttpMethod": "DELETE",
@@ -894,8 +959,12 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.Guid",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       },
       {
@@ -1373,6 +1442,11 @@
     ],
     "ReturnTypes": [
       {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
         "MediaTypes": [
           "text/plain",
@@ -1394,22 +1468,6 @@
   },
   {
     "ContainingType": "PropertiesController",
-    "Method": "TestValidation",
-    "RelativePath": "api/Properties/Update/{propertyId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "propertyId",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PropertiesController",
     "Method": "UpdatePropertyToRented",
     "RelativePath": "api/Properties/Update/Status/Rented/{propertyId}",
     "HttpMethod": "PUT",
@@ -1424,8 +1482,12 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "RealEstate.Application.Dtos.Property.PropertyDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       },
       {
@@ -1464,8 +1526,12 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "RealEstate.Application.Dtos.Property.PropertyDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       },
       {
@@ -1631,11 +1697,6 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "LessorId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "LesseeId",
         "Type": "System.String",
         "IsRequired": false
@@ -1652,7 +1713,7 @@
       },
       {
         "Name": "StartDate",
-        "Type": "System.String",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -1864,11 +1925,6 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "SellerId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BuyerId",
         "Type": "System.String",
         "IsRequired": false
@@ -1881,11 +1937,6 @@
       {
         "Name": "Price",
         "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "SaleDate",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -2039,6 +2090,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "RealEstate.API.Controllers.SalesController",
+    "Method": "GetSalesStatistics",
+    "RelativePath": "api/Sales/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RealEstate.API.Controllers.StatisticsController",
     "Method": "GetAllCategories",
     "RelativePath": "api/Statistics",
@@ -2074,6 +2135,27 @@
     "Parameters": [
       {
         "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RealEstate.API.Controllers.StatisticsController",
+    "Method": "GetSalesByMonth",
+    "RelativePath": "api/Statistics/monthly-sales/by-month",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -2426,34 +2508,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PropertiesController",
-    "Method": "GetPropertiesCount",
-    "RelativePath": "count",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "RealEstate.Application.Common.Pagination.PaginationResponse\u00601[[RealEstate.Application.Dtos.Property.PropertyDTO, RealEstate.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ]
   }
 ]

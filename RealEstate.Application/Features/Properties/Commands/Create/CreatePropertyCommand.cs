@@ -58,7 +58,7 @@ namespace RealEstate.Application.Features.Properties.Commands.Create
             Property property = _mapper.Map<Property>(request.Data);
 
             property.PropertyNumber = propertyNumber;
-            property.PropertyStatus = enPropertyStatus.Available;
+            property.PropertyStatus = PropertyStatus.Available;
             property.OwnerId = coustomer.Id;
 
 

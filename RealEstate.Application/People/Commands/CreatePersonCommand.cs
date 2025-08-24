@@ -14,7 +14,7 @@ namespace RealEstate.Application.People.Commands
         string NationallD, 
         string ImageURL, 
         string Phone, 
-        enGender Gender, 
+        Gender Gender, 
         DateOnly DateOfBirth
         ) : IRequest<Guid>;
 

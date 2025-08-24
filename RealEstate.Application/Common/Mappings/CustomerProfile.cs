@@ -24,7 +24,9 @@ namespace RealEstate.Application.Common.Mappings
                 .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.Person.DateOfBirth))
                 .ForMember(dest => dest.ImageURL, opt => opt.MapFrom(src => src.Person.ImageURL))
                 .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Person.Gender.ToString()))
-                .ForMember(dest => dest.customerType, opt => opt.MapFrom(src => src.CustomerType.ToString()));
+                .ForMember(dest => dest.PropertiesCount, opt => opt.MapFrom(src => src.Properties.Count))
+                .ForMember(dest => dest.JoiningDate, opt => opt.MapFrom(src => src.CreatedDate.Date.ToShortDateString()))
+                .ForMember(dest => dest.customerType, opt => opt.MapFrom(src => src.CustomerType.GetHashCode().ToString()));
         }
     }
 }

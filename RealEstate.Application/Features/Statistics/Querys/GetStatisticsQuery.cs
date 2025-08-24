@@ -53,9 +53,9 @@ namespace RealEstate.Application.Features.Statistics.Querys
             int usersCount = await _userRepository.CountAsync();
             int adminsCount = await _userRepository.AdminsCountAsync();
 
-            int availableProperties = await _propertyRepository.CountAsync(p => p.PropertyStatus == Domain.Enums.enPropertyStatus.Available);
-            int rentedProperties = await _propertyRepository.CountAsync(p => p.PropertyStatus == Domain.Enums.enPropertyStatus.Rented);
-            int soldProperties = await _propertyRepository.CountAsync(p => p.PropertyStatus == Domain.Enums.enPropertyStatus.Sold);
+            int availableProperties = await _propertyRepository.CountAsync(p => p.PropertyStatus == Domain.Enums.PropertyStatus.Available);
+            int rentedProperties = await _propertyRepository.CountAsync(p => p.PropertyStatus == Domain.Enums.PropertyStatus.Rented);
+            int soldProperties = await _propertyRepository.CountAsync(p => p.PropertyStatus == Domain.Enums.PropertyStatus.Sold);
 
              
 

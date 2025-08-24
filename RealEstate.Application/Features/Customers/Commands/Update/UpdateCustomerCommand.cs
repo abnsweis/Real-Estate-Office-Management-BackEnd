@@ -5,6 +5,7 @@ using RealEstate.Application.Common.Errors;
 using RealEstate.Application.Common.Interfaces.RepositoriosInterfaces;
 using RealEstate.Application.Common.Interfaces.Services;
 using RealEstate.Application.Common.Services;
+using RealEstate.Application.Dtos.Customer;
 using RealEstate.Application.Dtos.CustomerDTO;
 using RealEstate.Application.Dtos.Interfaces;
 using RealEstate.Application.Dtos.ResponseDTO;
@@ -19,15 +20,14 @@ using Error = FluentResults.Error;
 
 namespace RealEstate.Application.Features.Customers.Commands.Update
 {
-    public record UpdateCustomerCommand : IRequest<AppResponse>, ICustomerDTO
+    public record UpdateCustomerCommand : IRequest<AppResponse> 
     {
-        public Guid? CustomerId { get; set; }
-        public string? fullName { get; set; }
-        public string? nationalId { get; set; }
-        public string? phoneNumber { get; set; }
-        public string? dateOfBirth { get; set; }
-        public enGender? gender { get; set; }
-        public enCustomerType? customerType { get; set; }
+        public UpdateCustomerCommand(UpdateCustomerDTO Data)
+        {
+            this.Data = Data;
+        }
+
+        public UpdateCustomerDTO Data { get; }
     }
 
 
@@ -46,26 +46,26 @@ namespace RealEstate.Application.Features.Customers.Commands.Update
         public async Task<AppResponse> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
             List<Error> errors = new List<Error>();
-            var Customer = await _customerRepository.FirstOrDefaultAsync(filter: u => u.Id == request.CustomerId, includes: x => x.Person);
+            var Customer = await _customerRepository.FirstOrDefaultAsync(filter: u => u.Id == request.Data.GetCustomerId(), includes: x => x.Person);
             if (Customer is null)
             {
                 return new AppResponse
                 {
-                    Result = Result.Fail(new NotFoundError("customer", "customerId", request.CustomerId.ToString(), enApiErrorCode.CustomerNotFound)),
-                    Data = request.CustomerId.ToString()
+                    Result = Result.Fail(new NotFoundError("customer", "customerId", request.Data.GetCustomerId().ToString(), enApiErrorCode.CustomerNotFound)),
+                    Data = request.Data.GetCustomerId().ToString()
                 };
             }
 
 
-            if (_customerRepository.IsCustomerExists(request.nationalId) && request.nationalId != Customer.Person.NationalId)
+            if (_customerRepository.IsCustomerExists(request.Data.nationalId) && request.Data.nationalId != Customer.Person.NationalId)
             {
-                var error = new ConflictError(nameof(request.nationalId), $"A customer with the same national ID is already registered as a {request.customerType}.", enApiErrorCode.DuplicateCustomer);
+                var error = new ConflictError(nameof(request.Data.nationalId), $"A customer with the same national ID is already registered as a {request.Data.customerType}.", enApiErrorCode.DuplicateCustomer);
                 errors.Add(error);
             }
 
-            if (_customerRepository.IsCustomerPhoneNumberAlreadyTaken(request.phoneNumber) && request.phoneNumber != Customer.PhoneNumber)
+            if (_customerRepository.IsCustomerPhoneNumberAlreadyTaken(request.Data.phoneNumber) && request.Data.phoneNumber != Customer.PhoneNumber)
             {
-                errors.Add(new ConflictError(nameof(request.phoneNumber), "Phone Number Already Taken", enApiErrorCode.PhoneAlreadyTaken));
+                errors.Add(new ConflictError(nameof(request.Data.phoneNumber), "Phone Number Already Taken", enApiErrorCode.PhoneAlreadyTaken));
             }
 
 
@@ -76,12 +76,12 @@ namespace RealEstate.Application.Features.Customers.Commands.Update
             }
 
 
-            Customer.Person.FullName = request.fullName;
-            Customer.Person.NationalId = request.nationalId;
-            Customer.Person.Gender = request.gender.Value;
-            Customer.Person.DateOfBirth = DateOnly.Parse(request.dateOfBirth);
-            Customer.CustomerType = request.customerType.Value;
-            Customer.PhoneNumber = request.phoneNumber;
+            Customer.Person.FullName = request.Data.fullName!;
+            Customer.Person.NationalId = request.Data.nationalId;
+            Customer.Person.Gender = request.Data.gender.Value;
+            Customer.Person.DateOfBirth = DateOnly.Parse(request.Data.dateOfBirth);
+            Customer.CustomerType = request.Data.customerType.Value;
+            Customer.PhoneNumber = request.Data.phoneNumber;
 
 
             await _customerRepository.UpdateAsync(Customer);

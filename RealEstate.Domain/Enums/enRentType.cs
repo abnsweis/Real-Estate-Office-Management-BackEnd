@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate.Domain.Enums;
 
-public enum enRentType
+public enum RentType
 {
     Monthly = 1,
     Yearly = 2

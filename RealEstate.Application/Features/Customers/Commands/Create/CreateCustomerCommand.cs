@@ -5,6 +5,7 @@ using RealEstate.Application.Common.Errors;
 using RealEstate.Application.Common.Interfaces;
 using RealEstate.Application.Common.Interfaces.RepositoriosInterfaces;
 using RealEstate.Application.Common.Interfaces.Services;
+using RealEstate.Application.Dtos.Customer;
 using RealEstate.Application.Dtos.Interfaces;
 using RealEstate.Application.Dtos.ResponseDTO;
 using RealEstate.Domain.Entities;
@@ -12,14 +13,16 @@ using RealEstate.Domain.Enums;
 
 namespace RealEstate.Application.Features.Customers.Commands.Create
 {
-    public class CreateCustomerCommand : IRequest<AppResponse<Guid>>, ICustomerDTO
+    public class CreateCustomerCommand : IRequest<AppResponse<Guid>>    
     {
-        public string? fullName { get; set; }
-        public string? nationalId { get; set; }
-        public string? phoneNumber { get; set; }
-        public string? dateOfBirth { get; set; }
-        public enGender? gender { get; set; }
-        public enCustomerType? customerType { get; set; }
+        public CreateCustomerDTO Data { get; }
+         
+
+        public CreateCustomerCommand(CreateCustomerDTO Data)
+        {
+            this.Data = Data;
+        }
+
     }
 
 
@@ -47,16 +50,16 @@ namespace RealEstate.Application.Features.Customers.Commands.Create
 
 
 
-            var existingCustomer = _customerRepository.GetCustomerByNationalId(request.nationalId);
+            var existingCustomer = _customerRepository.GetCustomerByNationalId(request.Data.nationalId);
 
-            if (existingCustomer == null && _customerRepository.IsCustomerPhoneNumberAlreadyTaken(request.phoneNumber))
+            if (existingCustomer == null && _customerRepository.IsCustomerPhoneNumberAlreadyTaken(request.Data.phoneNumber))
             {
-                errors.Add(new ConflictError(nameof(request.phoneNumber), "Phone Number Already Taken", enApiErrorCode.PhoneAlreadyTaken));
+                errors.Add(new ConflictError(nameof(request.Data.phoneNumber), "Phone Number Already Taken", enApiErrorCode.PhoneAlreadyTaken));
             }
 
-            if (_customerRepository.IsCustomerExists(request.nationalId, request.customerType.Value))
+            if (_customerRepository.IsCustomerExists(request.Data.nationalId, request.Data.customerType.Value))
             {
-                var error = new ConflictError(nameof(request.nationalId), $"A customer with the same national ID is already registered as a {request.customerType}.", enApiErrorCode.DuplicateCustomer);
+                var error = new ConflictError(nameof(request.Data.nationalId), $"A customer with the same national ID is already registered as a {request.Data.customerType}.", enApiErrorCode.DuplicateCustomer);
                 return new AppResponse<Guid> { Result = Result.Fail(error) };
             }
 
@@ -68,7 +71,7 @@ namespace RealEstate.Application.Features.Customers.Commands.Create
 
                     PersonId = existingCustomer.PersonId,
                     PhoneNumber = existingCustomer.PhoneNumber,
-                    CustomerType = request.customerType.Value,
+                    CustomerType = request.Data.customerType.Value,
 
                 };
 
@@ -86,14 +89,14 @@ namespace RealEstate.Application.Features.Customers.Commands.Create
                 Customer = new Customer()
                 {
 
-                    PhoneNumber = request.phoneNumber,
-                    CustomerType = request.customerType.Value,
+                    PhoneNumber = request.Data.phoneNumber,
+                    CustomerType = request.Data.customerType.Value,
                     Person = new Person
                     {
-                        FullName = request.fullName,
-                        NationalId = request.nationalId,
-                        DateOfBirth = DateOnly.Parse(request.dateOfBirth),
-                        Gender = request.gender.Value,
+                        FullName = request.Data.fullName,
+                        NationalId = request.Data.nationalId,
+                        DateOfBirth = DateOnly.Parse(request.Data.dateOfBirth),
+                        Gender = request.Data.gender.Value,
                         ImageURL = _Imagepath,
                     }
 

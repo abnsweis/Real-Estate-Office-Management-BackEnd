@@ -53,8 +53,7 @@ namespace RealEstate.API.Controllers
         /// <returns>Category details including properties and subcategories.</returns>
         /// <response code="200">Successfully returned the category details.</response>
         /// <response code="404">Category with specified ID was not found.</response>
-        [HttpGet("{categoryId}")]
-        [Authorize(Roles = "SuperAdmin,Admin,User")] // All roles can view category details
+        [HttpGet("{categoryId}")] 
         public async Task<IActionResult> GetCategoryById(Guid categoryId)
         {
             var response = await _mediator.Send(new GetCategoryByIdQuery(categoryId));
@@ -72,8 +71,7 @@ namespace RealEstate.API.Controllers
         /// <returns>Category details including properties and subcategories.</returns>
         /// <response code="200">Successfully returned the category details.</response>
         /// <response code="404">Category with specified name was not found.</response>
-        [HttpGet("CategoryName/{categoryName}")]
-        [Authorize(Roles = "SuperAdmin,Admin,User")] // All roles can search by name
+        [HttpGet("CategoryName/{categoryName}")] 
         public async Task<IActionResult> GetCategoryByName(string categoryName)
         {
             var response = await _mediator.Send(new GetCategoryByNameQuery(categoryName));
@@ -119,7 +117,7 @@ namespace RealEstate.API.Controllers
         /// <response code="404">Category not found.</response>
         /// <response code="409">Category name already exists (conflict).</response>
         [HttpPut("{categoryId}")]
-        [Authorize(Roles = "SuperAdmin,Admin")] // Only admins can update categories
+ 
         public async Task<ActionResult<Guid>> UpdateCategory(
             [FromRoute] Guid categoryId,
             [FromBody] CreateUpdateCategoryDTO categoryData)
@@ -147,8 +145,8 @@ namespace RealEstate.API.Controllers
         /// <response code="204">Category successfully deleted.</response>
         /// <response code="400">Invalid input ID.</response>
         /// <response code="404">Category not found.</response>
+        
         [HttpDelete("{categoryId}")]
-        [Authorize(Roles = "SuperAdmin")] // Only SuperAdmin can delete categories
         public async Task<IActionResult> DeleteCategory([FromRoute] Guid categoryId)
         {
             var response = await _mediator.Send(new DeleteCategoryCommand(categoryId));

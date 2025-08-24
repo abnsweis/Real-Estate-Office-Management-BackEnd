@@ -19,7 +19,7 @@ public partial class Property : BaseAuditableEntity
 
     public string Address { get; set; } = null!;
 
-    public enPropertyStatus PropertyStatus { get; set; }
+    public PropertyStatus PropertyStatus { get; set; }
     
     public decimal Area { get; set; }
 

@@ -45,6 +45,16 @@ namespace RealEstate.Infrastructure.Repositorios
  
             return query.OrderByDescending(p => p.Ratings.Any() ? p.Ratings.Average(r => r.RatingNumber) : 0).Take(7).ToListAsync();
         }
+
+        public async Task<int> GetAvailablePropertiesCountAsync()
+        {
+            return await _context.Properties.CountAsync(p => p.PropertyStatus == PropertyStatus.Available && !p.IsDeleted);
+        }
+        public async Task<int> GetSoldPropertiesCountAsync(CancellationToken cancellationToken = default)
+        { 
+            return await _context.Properties.CountAsync(p => p.PropertyStatus == PropertyStatus.Sold && !p.IsDeleted, cancellationToken);
+        }
+
         public Task<List<Property>> GetLatestTop7Properties(params Expression<Func<Property, object>>[]? includes)
         {
             IQueryable<Property> query = _context.Properties.AsQueryable();
@@ -64,7 +74,7 @@ namespace RealEstate.Infrastructure.Repositorios
 
         public bool IsPropertyAvailable(Guid propertyId)
         {
-            return _context.Properties.FirstOrDefault(p => p.Id == propertyId)!.PropertyStatus == enPropertyStatus.Available;
+            return _context.Properties.FirstOrDefault(p => p.Id == propertyId)!.PropertyStatus == PropertyStatus.Available;
         }
 
         public bool IsPropertyExistsById(Guid propertyId)

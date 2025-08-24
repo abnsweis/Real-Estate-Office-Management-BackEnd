@@ -43,7 +43,7 @@ namespace RealEstate.Infrastructure.Repositorios
                     Month = g.Key,
                     TotalSales = g.Sum(s =>
                     {
-                        int totalMonths = s.RentType == enRentType.Yearly ? s.Duration * 12 : s.Duration;
+                        int totalMonths = s.RentType == RentType.Yearly ? s.Duration * 12 : s.Duration;
                         return totalMonths * s.RentPriceMonth;
                     })
                 })
@@ -69,7 +69,7 @@ namespace RealEstate.Infrastructure.Repositorios
         public decimal GetTotalRentalsRevenue()
         {
             return _context.Rentals.Sum(s =>
-                (s.RentType == enRentType.Yearly ? s.Duration * 12 : s.Duration) * s.RentPriceMonth
+                (s.RentType == RentType.Yearly ? s.Duration * 12 : s.Duration) * s.RentPriceMonth
             ) ;
         }
 

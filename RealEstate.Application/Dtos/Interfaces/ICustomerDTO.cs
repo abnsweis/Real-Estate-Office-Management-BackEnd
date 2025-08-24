@@ -13,8 +13,8 @@ namespace RealEstate.Application.Dtos.Interfaces
         string? fullName { get; } 
         string? phoneNumber { get; }
         string? nationalId { get; }
-        enGender? gender { get; }
-        enCustomerType? customerType { get; set; }
+        Gender? gender { get; }
+        CustomerType? customerType { get; set; }
         string? dateOfBirth { get; } 
     }
      

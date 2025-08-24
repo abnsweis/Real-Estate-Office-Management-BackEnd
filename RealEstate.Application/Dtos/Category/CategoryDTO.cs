@@ -10,5 +10,6 @@ namespace RealEstate.Application.Dtos.Category
     {
         public string CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public string PropertiesCount { get; set; }
     }
 }
